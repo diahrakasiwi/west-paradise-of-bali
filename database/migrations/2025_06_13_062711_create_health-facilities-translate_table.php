@@ -24,7 +24,7 @@ return new class extends Migration
 
             $table->foreign('health_facility_id')
                 ->references('id')
-                ->on('healt_facilities')
+                ->on('health_facilities')
                 ->onDelete('cascade');
 
             $table->unique(['health_facility_id', 'locale']);
