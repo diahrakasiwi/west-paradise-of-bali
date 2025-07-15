@@ -122,8 +122,6 @@ const translations = {
             phone: "Telepon",
             footerDesc:
                 "Website ini hadir sebagai platform informasi pariwisata resmi untuk memudahkan pengunjung dalam menemukan destinasi menarik, aktivitas wisata, serta informasi pendukung lainnya seputar perjalanan ke Jembrana.",
-            socialMedia: "Media Sosial",
-            contactUs: "Hubungi Kami",
             call: "Hubungi Kami",
             location: "Lokasi",
             street: "Jalan. Suropati No.1, Dauhwaru, Kec. Negara, Kabupaten Jembrana, Bali 82218"
@@ -331,8 +329,6 @@ const translations = {
             phone: "Phone",
             footerDesc:
                 "This website serves as an official tourism information platform to help visitors find interesting destinations, tourist activities, and other supporting information about traveling to Jembrana.",
-            socialMedia: "Social Media",
-            contanctUs: "Contact Us",
             call: "Call Us",
             location: "Location",
             street: "Suropati Street No.1, Dauhwaru, Negara District, Jembrana Regency, Bali 82218"
