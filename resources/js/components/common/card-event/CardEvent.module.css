@@ -1,0 +1,20 @@
+.clampedDescription {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Di file CSS (CardEvent.module.css atau global.css) */
+.event-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .event-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom saat lebar cukup */
+  }
+}
+

@@ -1,0 +1,171 @@
+.custom-footer {
+    background: #181818;
+    padding-top: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-curve {
+    width: 100vw;
+    height: 300px;
+    clip-path: ellipse(100% 100% at 50% 0); /* lengkung bawah */
+    margin-bottom: 50px;
+    z-index: 0;
+    margin-left: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.footer-curve::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url("/assets/images/logo-footer.png") center/cover no-repeat;
+    z-index: 0;
+    clip-path: ellipse(100% 100% at 50% 0);
+}
+
+.hero-content {
+    position: relative; /* ⬅️ agar berada di atas background */
+    z-index: 1;
+    max-width: 960px;
+    padding: 0 16px;
+}
+
+.hero-content h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.hero-content .highlight {
+    color: #fbbf24;
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    font-style: italic;
+    font-family: "Caveat", cursive;
+}
+
+/* .footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 36px 16px 36px;
+} */
+
+.brand-title {
+    font-family: "Berkshire Swash";
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+.brand-subtitle {
+    display: block;
+    color: #d3001b;
+    font-family: "Bilbo Swash Caps";
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-top: -2px;
+    margin-left: 70px;
+}
+
+.footer-desc {
+    color: #fff;
+    display: block;
+    margin-top: -20px;
+    font-size: 1rem;
+    line-height: 2;
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+.footer-section-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff !important;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #d3001b;
+    width: fit-content;
+    padding-bottom: 6px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-links li {
+    margin-bottom: 16px;
+}
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.footer-links a:hover {
+    color: #d3001b;
+}
+
+.footer-social {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-social li {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: #fff;
+    font-size: 1rem;
+}
+.footer-social .anticon {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding: 10px 0;
+    text-align: center;
+}
+.footer-bottom p {
+    color: #aaa;
+    margin-top: 40px;
+    font-size: 0.9em;
+    font-family: "Montserrat", Arial, sans-serif;
+}
+.footer-social a {
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-social a:hover {
+    color: #d3001b !important;
+}
+
