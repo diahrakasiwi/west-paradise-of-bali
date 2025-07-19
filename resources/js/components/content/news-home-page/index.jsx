@@ -54,7 +54,7 @@ export default function NewsContent() {
 
     const handleSearch = (value) => {
         const filtered = news.filter((item) =>
-            item.title.toLowerCase().includes(value.toLowerCase())
+            item.title?.toLowerCase().includes(value?.toLowerCase())
         );
 
         setSearchTerm(value);

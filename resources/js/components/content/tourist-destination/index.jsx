@@ -41,8 +41,8 @@ export default function TouristDestinationContent() {
     useEffect(() => {
         const filtered = touristDestinations.filter((item) => {
             const matchSearch = item.name
-                .toLowerCase()
-                .includes(searchValue.toLowerCase());
+                ?.toLowerCase()
+                .includes(searchValue?.toLowerCase());
             const matchDistrict = selectedDistrict
                 ? item.district === selectedDistrict
                 : true;

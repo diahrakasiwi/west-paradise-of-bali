@@ -40,8 +40,8 @@ export default function HealthFacilitiesContent() {
     useEffect(() => {
         const filtered = healthFacilities.filter((item) => {
             const matchSearch = item.name
-                .toLowerCase()
-                .includes(searchValue.toLowerCase());
+                ?.toLowerCase()
+                .includes(searchValue?.toLowerCase());
 
             const matchDistrict = selectedDistrict
                 ? item.district === selectedDistrict

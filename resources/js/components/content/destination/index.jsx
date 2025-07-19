@@ -40,7 +40,7 @@ export default function DestinationContent() {
                 district.length === 0 || district.includes(item.district);
             const matchSearch =
                 search === "" ||
-                item.name.toLowerCase().includes(search.toLowerCase());
+                item.name?.toLowerCase().includes(search?.toLowerCase());
 
             return matchCategory && matchDistrict && matchSearch;
         });
@@ -203,7 +203,7 @@ export default function DestinationContent() {
                                         return (
                                             <Col
                                                 key={item.id}
-                                               
+
                                             >
                                                 <CustomCard
                                                     id={item.id}

@@ -39,8 +39,8 @@ export default function VillageContent() {
     useEffect(() => {
         const filtered = villages.filter((item) => {
             const matchSearch = item.name
-                .toLowerCase()
-                .includes(searchValue.toLowerCase());
+                ?.toLowerCase()
+                .includes(searchValue?.toLowerCase());
             const matchDistrict = selectedDistrict
                 ? item.district === selectedDistrict
                 : true;

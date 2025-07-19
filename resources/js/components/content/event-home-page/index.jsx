@@ -70,7 +70,7 @@ export default function EventContent() {
     };
 
     const searchFilteredEvents = filteredEvents.filter((item) =>
-        item.name.toLowerCase().includes(searchTerm.toLowerCase())
+        item.name?.toLowerCase().includes(searchTerm?.toLowerCase())
     );
 
     const paginatedEvents = searchFilteredEvents.slice(

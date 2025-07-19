@@ -43,8 +43,8 @@ export default function ReviewContentDashboard() {
         if (searchTerm) {
             result = result.filter(
                 (item) =>
-                    item.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    item.review?.toLowerCase().includes(searchTerm.toLowerCase())
+                    item.name?.toLowerCase()?.includes(searchTerm?.toLowerCase()) ||
+                    item.review?.toLowerCase()?.includes(searchTerm?.toLowerCase())
             );
         }
 

@@ -39,8 +39,8 @@ export default function AccomodationContent() {
     useEffect(() => {
         const filtered = accomodations.filter((item) => {
             const matchSearch = (item.name || "")
-                .toLowerCase()
-                .includes(searchValue.toLowerCase());
+                ?.toLowerCase()
+                .includes(searchValue?.toLowerCase());
 
             const matchDistrict = selectedDistrict
                 ? item.district === selectedDistrict

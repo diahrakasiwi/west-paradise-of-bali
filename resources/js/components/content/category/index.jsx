@@ -18,10 +18,10 @@ export default function CategoryContent({}) {
     };
 
     useEffect(() => {
-        const lowerSearch = searchValue.toLowerCase();
+        const lowerSearch = searchValue?.toLowerCase();
         const filtered = categories.filter(
             (item) =>
-                item.name_category.toLowerCase().includes(lowerSearch) &&
+                item.name_category?.toLowerCase().includes(lowerSearch) &&
                 (selectedType ? item.type_category === selectedType : true)
         );
         setFilteredCategories(filtered);

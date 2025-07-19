@@ -3,7 +3,9 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "all": "concurrently \"npm run dev\" \"php artisan serve --port=8723\""
+        "start": "vite preview",
+        "all": "concurrently \"npm run dev\" \"php artisan serve --port=8723\"",
+        "all:prod": "concurrently \"npm run start\" \"php artisan serve --port=8723\""
     },
     "devDependencies": {
         "@vitejs/plugin-react": "^4.4.1",

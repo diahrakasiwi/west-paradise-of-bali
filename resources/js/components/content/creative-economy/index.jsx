@@ -39,8 +39,8 @@ export default function CreativeEconomyContent() {
     useEffect(() => {
         const filtered = creativeEconomy.filter((item) => {
             const matchSearch = (item.name || "")
-                .toLowerCase()
-                .includes(searchValue.toLowerCase());
+                ?.toLowerCase()
+                .includes(searchValue?.toLowerCase());
 
             const matchDistrict = selectedDistrict
                 ? item.district === selectedDistrict
