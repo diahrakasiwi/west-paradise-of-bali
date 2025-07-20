@@ -35,7 +35,7 @@ const { Title, Paragraph, Text } = Typography;
 const { useBreakpoint } = Grid;
 
 export default function DetailDestinationContent() {
-    const { data, type, nearby, reviews, locale, authority } = usePage().props;
+    const { data, type, nearby, reviews, locale, authority, views, averageRating } = usePage().props; //menambahkan views dan averageRating
     const t = translations[locale || "id"];
     const scrollRef = useRef(null);
 
@@ -154,24 +154,34 @@ export default function DetailDestinationContent() {
                                 style={{
                                     display: "flex",
                                     gap: 12,
-                                    overflowX: "auto",
+                                    overflowX: "scroll",
+                                    scrollBehavior: "smooth", //nambah
+                                    scrollSnapType: "x mandatory", //nambah
                                     padding: "4px 0",
                                 }}
                             >
                                 {images.map((src, index) => (
-                                    <Image
+                                    <div
                                         key={index}
-                                        width={isMobile ? 220 : 500}
-                                        height={isMobile ? 140 : 300}
                                         style={{
+                                            flex: "0 0 auto",
+                                            width: isMobile ? 250 : 500,
+                                            height: isMobile ? 150 : 300,
                                             borderRadius: 10,
-                                            objectFit: "cover",
-                                            flexShrink: 0,
-                                            cursor: "pointer",
+                                            overflow: "hidden",
+                                            scrollSnapAlign: "start",
                                         }}
-                                        src={src}
-                                        alt={`thumb-${index}`}
-                                    />
+                                    >
+                                        <Image
+                                            width="100%"
+                                            height="100%"
+                                            style={{
+                                                objectFit: "cover",
+                                            }}
+                                            src={src}
+                                            alt={`thumb-${index}`}
+                                        />
+                                    </div>
                                 ))}
                             </div>
 
@@ -210,18 +220,17 @@ export default function DetailDestinationContent() {
                     }}
                 >
                     <EyeFilled style={{ fontSize: 18, marginRight: 4 }} />
-                    <span>200</span>
+                    <span>{views}</span>
                     <span style={{ margin: "0 8px" }}>|</span>
-                    <span
+                    {/* <span
                         style={{
                             display: "flex",
                             alignItems: "center",
                             gap: 4,
                         }}
-                    >
-                        <StarFilled style={{ color: "#ffc107" }} />{" "}
-                        <span>(5)</span>
-                    </span>
+                    > */}
+                        <StarFilled style={{ color: "#E4A70A" }} />
+                        <span>({averageRating ? averageRating.toFixed(1) : "-"})</span>
                 </div>
                 <Divider />
 
