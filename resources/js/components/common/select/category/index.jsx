@@ -17,14 +17,14 @@ export default function FormSelectCategory({ category, onFilter }) {
                             style={{ marginBottom: 0 }}
                         >
                             <Select
-                                placeholder="Kategori Destinasi Wisata"
+                                placeholder="Kategori Umum"
                                 style={{
                                     width: "100%",
                                     height: "45px",
                                 }}
                                 size="large"
                                 value={
-                                    selectedType || "Kategori Destinasi Wisata"
+                                    selectedType || "Kategori Umum"
                                 }
                                 onChange={(value) => setSelectedType(value)}
                             >
