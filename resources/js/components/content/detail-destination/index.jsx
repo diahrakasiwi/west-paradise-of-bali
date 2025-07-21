@@ -107,7 +107,7 @@ export default function DetailDestinationContent() {
                             fontWeight: 500,
                         }}
                     >
-                        Kembali ke Daftar {parseType(type, locale)}
+                        Kembali ke Pilihan {parseType(type, locale)}
                         {/* {t.label.detail} {parseType(type, locale)} */}
                     </span>
                 </Flex>
@@ -377,27 +377,37 @@ export default function DetailDestinationContent() {
             {nearby && nearby.length > 0 && (
                 <div
                     style={{
-                        background:
-                            "linear-gradient(to bottom, #3F5845, #4F7157, #5F8868, #6C9C77)",
-                        padding: "48px 64px",
-                        fontFamily: "Poppins, sans-serif",
+                    background:
+                        "linear-gradient(to bottom, #3F5845, #4F7157, #5F8868, #6C9C77)",
+                    padding: "48px 64px",
+                    fontFamily: "Poppins, sans-serif",
                     }}
                 >
                     <Title
-                        level={2}
-                        style={{
-                            color: "white",
-                            fontWeight: 700,
-                            marginBottom: 32,
-                            textAlign: "center",
-                        }}
+                    level={2}
+                    style={{
+                        color: "white",
+                        fontWeight: 700,
+                        marginBottom: 32,
+                        textAlign: "center",
+                    }}
                     >
-                        {t.label.nearbyPlaces}
+                    {t.label.nearbyPlaces}
                     </Title>
 
                     <Row gutter={[24, 24]} justify="center">
                         {nearby.map((item) => (
-                            <Col key={item.id} xs={24} sm={12} md={8} lg={6}>
+                            <Col
+                                key={item.id}
+                                xs={24}
+                                sm={12}
+                                md={8}
+                                lg={6}
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}
+                                >
                                 <CustomCard
                                     id={item.id}
                                     name={item.name}

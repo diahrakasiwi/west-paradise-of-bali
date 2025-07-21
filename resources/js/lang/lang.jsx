@@ -16,7 +16,7 @@ const translations = {
             ratingAndReview: "Peringkat dan Ulasan",
             noReview: "Belum ada ulasan",
             firstReview: "Jadi pengulas pertama!",
-            allReview: "Lihat semua ulasan",
+            allReview: "Lihat dan Tambah Ulasan",
             authority: "Kewenangan",
         },
         type: {
@@ -230,7 +230,6 @@ const translations = {
             all: "Semua",
             filter: {
                 terbaru: "Terbaru",
-                populer: "Populer",
                 terlama: "Terlama",
             },
             notification: {
@@ -484,7 +483,6 @@ const translations = {
             all: "All",
             filter: {
                 terbaru: "Latest",
-                populer: "Popular",
                 terlama: "Oldest",
             },
 

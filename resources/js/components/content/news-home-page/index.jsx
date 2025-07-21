@@ -12,7 +12,7 @@ import {
     notification,
     Grid,
 } from "antd";
-import CustomCard from "../../common/card";
+import NewsCard from "../../common/news-card";
 import SearchBar from "../../common/search";
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
@@ -41,11 +41,8 @@ export default function NewsContent() {
             sorted.sort((a, b) =>
                 dayjs(a.created_at).isAfter(dayjs(b.created_at)) ? 1 : -1
             );
-        } else if (type === "terpopuler") {
-            sorted.sort(
-                (a, b) => (b.popular_score || 0) - (a.popular_score || 0)
-            );
-        }
+        } 
+
 
         setActiveFilter(type);
         setFilteredNews(sorted);
@@ -54,7 +51,7 @@ export default function NewsContent() {
 
     const handleSearch = (value) => {
         const filtered = news.filter((item) =>
-            item.title?.toLowerCase().includes(value?.toLowerCase())
+            item.title.toLowerCase().includes(value.toLowerCase())
         );
 
         setSearchTerm(value);
@@ -143,11 +140,11 @@ export default function NewsContent() {
                                 <Flex
                                     gap={15}
                                     style={{
-                                        marginBottom: 24,
+                                        marginBottom: 25,
                                         flexWrap: "wrap",
                                     }}
                                 >
-                                    {["terbaru", "terlama", "populer"].map(
+                                    {["terbaru", "terlama"].map( //menghapus terpopuler
                                         (value) => (
                                             <Button
                                                 key={value}
@@ -182,7 +179,6 @@ export default function NewsContent() {
                                         )
                                     )}
                                 </Flex>
-
                                 <Row gutter={[24, 24]}>
                                     {paginatedNews.map((item) => (
                                         <Col
@@ -191,22 +187,27 @@ export default function NewsContent() {
                                             sm={12}
                                             md={8}
                                             lg={6}
+                                            style={{ display: "flex", justifyContent: "center",}}
                                         >
-                                            <CustomCard
+                                            <NewsCard
                                                 slug={item.slug}
-                                                name={item.title}
+                                                title={item.title}
                                                 imageUrl={item.thumbnail}
-                                                category={null}
-                                                district={null}
                                                 createdAt={item.created_at}
                                                 locale={locale}
+                                                cardStyle={{ 
+                                                    width: 260,
+                                                    minHeight: 320,    
+                                                    borderRadius: 12
+                                                }}     
                                             />
                                         </Col>
                                     ))}
                                 </Row>
-
                                 <div
                                     style={{
+                                        width: "100%",
+                                        maxWidth: 200,
                                         textAlign: "center",
                                         marginTop: 32,
                                     }}
