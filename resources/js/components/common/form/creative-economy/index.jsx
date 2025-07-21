@@ -12,6 +12,8 @@ import {
     Col,
     TimePicker,
     Divider,
+    Popconfirm,
+    message,
 } from "antd";
 import { useState, useEffect } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
@@ -86,7 +88,7 @@ export default function FormCreativeEconomy({
 
     return (
         <div>
-            <Card style={{ borderRadius: 10 }}>
+            <Card style={{body: {borderRadius: 10} }}>
                 <Title level={4}>{title}</Title>
                 <Divider />
 

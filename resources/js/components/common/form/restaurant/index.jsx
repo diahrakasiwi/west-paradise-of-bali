@@ -122,7 +122,7 @@ export default function FormRestaurant({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan nama restoran",
+                                        message: "Nama Restoran wajib diisi",
                                     },
                                 ]}
                             >
@@ -136,7 +136,7 @@ export default function FormRestaurant({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan Kecamatan",
+                                        message: "Kecamatan wajib diisi",
                                     },
                                 ]}
                             >
@@ -150,7 +150,7 @@ export default function FormRestaurant({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan Desa/Kelurahan",
+                                        message: "Desa/Kelurahan wajib diisi",
                                     },
                                 ]}
                             >
@@ -160,47 +160,6 @@ export default function FormRestaurant({
                     </Row>
 
                     <Row gutter={16}>
-                        {/* <Col span={6}>
-                            <Form.Item
-                                label="Jenis Kategori"
-                                name="type_category"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: "Pilih jenis kategori",
-                                    },
-                                ]}
-                            >
-                                <Select placeholder="Pilih Jenis Kategori">
-                                    <Select.Option value="Umum">
-                                        Umum
-                                    </Select.Option>
-                                </Select>
-                            </Form.Item>
-                        </Col>
-                        <Col span={6}>
-                            <Form.Item
-                                label="Kategori"
-                                name="category_id"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: "Pilih kategori",
-                                    },
-                                ]}
-                            >
-                                <Select placeholder="Pilih Kategori">
-                                    {category.map((item) => (
-                                        <Select.Option
-                                            key={item.id}
-                                            value={item.id}
-                                        >
-                                            {item.name_category}
-                                        </Select.Option>
-                                    ))}
-                                </Select>
-                            </Form.Item>
-                        </Col> */}
                         <Col span={24}>
                             <Form.Item
                                 label="Alamat"
@@ -208,7 +167,7 @@ export default function FormRestaurant({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan alamat",
+                                        message: "Alamat wajib diisi",
                                     },
                                 ]}
                             >
@@ -257,7 +216,7 @@ export default function FormRestaurant({
                         label="Deskripsi"
                         name="description"
                         rules={[
-                            { required: true, message: "Masukkan deskripsi" },
+                            { required: true, message: "Deskripsi wajib diisi" },
                         ]}
                     >
                         <ReactQuill
@@ -272,9 +231,23 @@ export default function FormRestaurant({
                         label="Thumbnail"
                         name="thumbnail"
                         rules={[
-                            { required: true, message: "Upload thumbnail" },
+                            { required: true, message: "Thumbnail wajib diisi" },
                         ]}
                     >
+                    <div
+                        style={{
+                            backgroundColor: "#fff",
+                            padding: 18,
+                            borderLeft: "6px solid orange",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                            marginBottom: 24,
+                            fontWeight: 320,
+                        }}
+                    >
+                        <Text>
+                            <b>Petunjuk Thumbnail:</b> Disarankan rasio gambar: 4:3 (landscape) | Maksimal ukuran file: 2 MB | Format jpg, jpeg, png, atau webp.
+                        </Text>
+                    </div>
                         <>
                             {process === "update" && thumbnailPreview ? (
                                 <div style={{ marginBottom: 10 }}>
@@ -353,7 +326,7 @@ export default function FormRestaurant({
                     <Form.Item
                         label="Foto"
                         name="photos"
-                        rules={[{ required: true, message: "Upload foto" }]}
+                        rules={[{ required: true, message: "Unggah minimal 1 foto" }]}
                     >
                         <>
                             {process === "update" &&
@@ -467,7 +440,7 @@ export default function FormRestaurant({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan kontak",
+                                        message: "Kontak wajib diisi",
                                     },
                                 ]}
                             >
@@ -481,7 +454,7 @@ export default function FormRestaurant({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan kewenangan",
+                                        message: "Kewenangan wajib diisi",
                                     },
                                 ]}
                             >
@@ -539,7 +512,7 @@ export default function FormRestaurant({
                         label="Fasilitas"
                         name="facilities"
                         rules={[
-                            { required: true, message: "Masukkan fasilitas" },
+                            { required: true, message: "Fasilitas wajib diisi" },
                         ]}
                     >
                         <Input placeholder="Masukkan Fasilitas..." />
