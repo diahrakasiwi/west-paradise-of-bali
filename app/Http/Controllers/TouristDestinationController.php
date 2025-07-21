@@ -61,10 +61,10 @@ class TouristDestinationController extends Controller
             'village' => 'required|string|max:255',
             'address' => 'required|string',
             'description' => 'required|string',
-            'thumbnail' => 'required|string',
+            'thumbnail' => ['required', 'url', 'regex:/\.(jpg|jpeg|png|webp)$/i'],
             'contact' => 'required|string|max:255',
             'facilities' => 'nullable|string',
-            'google_business' => 'nullable|string',
+            'google_business' => 'nullable|url',
             'latitude' => 'required|numeric',
             'longitude' => 'required|numeric',
             'is_published' => 'boolean',
@@ -74,8 +74,8 @@ class TouristDestinationController extends Controller
             'end_time' => 'nullable|date_format:H:i',
             'is_fullday' => 'nullable|boolean',
             'category_id' => 'required|uuid|exists:categories,id',
-            'photos' => 'array',
-            'photos.*' => 'string',
+            'photos' => 'required|array|min:1',
+            'photos.*' => ['required', 'string', 'url', 'regex:/\.(jpg|jpeg|png|webp)$/i'],
         ]);
 
         try {
@@ -143,7 +143,22 @@ class TouristDestinationController extends Controller
      */
     public function show($id)
     {
-        //
+        $destination = TouristDestination::with(['category', 'reviews'])->findOrFail($id);
+
+        // Tambah 1 view setiap kali dikunjungi
+        $destination->increment('views');
+
+        // Hitung rata-rata rating dari review
+        $averageRating = $destination->reviews()->avg('rating');
+
+        return Inertia::render('destination/Detail/Page', [
+            'data' => $destination,
+            'reviews' => $destination->reviews,
+            'views' => $destination->views,
+            'averageRating' => $destination->reviews->avg('rating'),
+            'locale' => app()->getLocale(),
+            'authority' => $destination->authority,
+        ]);
     }
 
     /**
@@ -163,6 +178,15 @@ class TouristDestinationController extends Controller
             'category' => $category,
         ]);
     }
+    public function images($id)
+    {
+        $touristDestination = TouristDestination::with('images')->findOrFail($id);
+        
+        return Inertia::render('Dashboard/TouristDestinations/Images', [
+            'touristDestinations' => $touristDestination,
+        ]);
+    }
+
 
     /**
      * Update the specified resource in storage.
@@ -179,10 +203,10 @@ class TouristDestinationController extends Controller
             'village' => 'required|string|max:255',
             'address' => 'required|string',
             'description' => 'required|string',
-            'thumbnail' => 'required|string',
+            'thumbnail' => ['required', 'url', 'regex:/\.(jpg|jpeg|png|webp)$/i'],
             'contact' => 'required|string|max:255',
             'facilities' => 'nullable|string',
-            'google_business' => 'nullable|string',
+            'google_business' => 'nullable|url',
             'authority' => 'required|string|max:255',
             'latitude' => 'required|numeric',
             'longitude' => 'required|numeric',
@@ -193,7 +217,7 @@ class TouristDestinationController extends Controller
             'is_fullday' => 'nullable|boolean',
             'category_id' => 'required|uuid|exists:categories,id',
             'photos' => 'array',
-            'photos.*' => 'string',
+            'photos.*' => ['string', 'url', 'regex:/\.(jpg|jpeg|png|webp)$/i'],
         ]);
 
         try {
