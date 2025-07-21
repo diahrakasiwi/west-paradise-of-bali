@@ -9,9 +9,7 @@ export default function EditCreativeEconomy() {
 
     const handleSubmit = (values) => {
         Inertia.put(
-            `/dashboard/creative-economy/${creativeEconomy.id}`,
-            values,
-            {
+            `/dashboard/creative-economy/${creativeEconomy.id}`, values, {
                 onSuccess: () => {
                     notification.success({
                         message: "Berhasil",
@@ -35,8 +33,8 @@ export default function EditCreativeEconomy() {
     return (
         <FormCreativeEconomy
             initialValues={creativeEconomy}
-            process="update"
             title="Edit Ekonomi Kreatif"
+            process="update"
             onSubmit={handleSubmit}
             onCancel={handleCancel}
         />

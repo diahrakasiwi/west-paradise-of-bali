@@ -19,6 +19,18 @@ export default function SupaImageUploader({
     const [previewImages, setPreviewImages] = useState([]);
 
     const handleUpload = async ({ file, onSuccess, onError }) => {
+        // Validasi format gambar
+        if (!file.type.startsWith("image/")) {
+            message.error("File harus berupa gambar!");
+            return onError?.(new Error("File bukan gambar"));
+        }
+
+        // Validasi ukuran maksimal 2MB
+        if (file.size > 2 * 1024 * 1024) {
+            message.error("Ukuran file maksimal 2MB");
+            return onError?.(new Error("File terlalu besar"));
+        }
+
         const filePath = folder
             ? `${folder}/${Date.now()}-${file.name}`
             : `${Date.now()}-${file.name}`;
