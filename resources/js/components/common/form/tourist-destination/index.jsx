@@ -134,7 +134,7 @@ export default function FormTouristDestination({
                                     {
                                         required: true,
                                         message:
-                                            "Masukkan nama destinasi wisata",
+                                            "Nama Destinasi Wisata wajib diisi",
                                     },
                                 ]}
                             >
@@ -148,7 +148,7 @@ export default function FormTouristDestination({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan Kecamatan",
+                                        message: "Kecamatan wajib diisi",
                                     },
                                 ]}
                             >
@@ -162,7 +162,7 @@ export default function FormTouristDestination({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan Desa/Kelurahan",
+                                        message: "Desa/Kelurahan wajib diisi",
                                     },
                                 ]}
                             >
@@ -179,7 +179,7 @@ export default function FormTouristDestination({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Pilih jenis kategori",
+                                        message: "Jenis Kategori wajib diisi",
                                     },
                                 ]}
                             >
@@ -200,7 +200,7 @@ export default function FormTouristDestination({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Pilih kategori",
+                                        message: "Kategori wajib diisi",
                                     },
                                 ]}
                             >
@@ -223,7 +223,7 @@ export default function FormTouristDestination({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan alamat",
+                                        message: "Alamat wajib diisi",
                                     },
                                 ]}
                             >
@@ -232,7 +232,8 @@ export default function FormTouristDestination({
                         </Col>
                     </Row>
 
-                    <Form.Item label="Pilih Lokasi di Peta">
+                    <Form.Item 
+                        label="Pilih Lokasi di Peta">
                         <MapContainer
                             center={defaultLatlng}
                             zoom={12}
@@ -272,7 +273,7 @@ export default function FormTouristDestination({
                         label="Deskripsi"
                         name="description"
                         rules={[
-                            { required: true, message: "Masukkan deskripsi" },
+                            { required: true, message: "Deskripsi wajib diisi" },
                         ]}
                     >
                         <ReactQuill
@@ -282,14 +283,28 @@ export default function FormTouristDestination({
                             }
                         />
                     </Form.Item>
-
+                    
                     <Form.Item
                         label="Thumbnail"
                         name="thumbnail"
                         rules={[
-                            { required: true, message: "Upload thumbnail" },
+                            { required: true, message: "Thumbnail wajib diisi" },
                         ]}
                     >
+                    <div
+                        style={{
+                            backgroundColor: "#fff",
+                            padding: 18,
+                            borderLeft: "6px solid orange",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                            marginBottom: 24,
+                            fontWeight: 320,
+                        }}
+                    >
+                        <Text>
+                            <b>Petunjuk Thumbnail:</b> Disarankan rasio gambar: 4:3 (landscape) | Maksimal ukuran file: 2 MB | Format jpg, jpeg, png, atau webp.
+                        </Text>
+                    </div>
                         <>
                             {process === "update" && thumbnailPreview ? (
                                 <div style={{ marginBottom: 10 }}>
@@ -319,7 +334,7 @@ export default function FormTouristDestination({
 
                                             if (error) {
                                                 message.error(
-                                                    "Gagal menghapus gambar: " +
+                                                    "Gagal menghapus thumbnail: " +
                                                         error.message
                                                 );
                                             } else {
@@ -364,12 +379,26 @@ export default function FormTouristDestination({
                             )}
                         </>
                     </Form.Item>
-
+                    
                     <Form.Item
                         label="Foto"
                         name="photos"
-                        rules={[{ required: true, message: "Upload foto" }]}
+                        rules={[{ required: true, message: "Unggah minimal 1 foto" }]}
                     >
+                        <div
+                        style={{
+                            backgroundColor: "#fff",
+                            padding: 18,
+                            borderLeft: "6px solid orange",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                            marginBottom: 24,
+                            fontWeight: 320,
+                        }}
+                    >
+                        <Text>
+                            <b>Petunjuk Foto:</b> Unggah minimal 1 foto | Maksimal ukuran file: 2 MB | Format jpg, jpeg, png, atau webp.
+                        </Text>
+                    </div>
                         <>
                             {process === "update" &&
                             photosPreview.length > 0 ? (
@@ -482,7 +511,7 @@ export default function FormTouristDestination({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan kontak",
+                                        message: "Kontak wajib diisi",
                                     },
                                 ]}
                             >
@@ -563,12 +592,12 @@ export default function FormTouristDestination({
                     <Form.Item
                         label="Google Business"
                         name="google_business"
-                        rules={[
-                            {
-                                required: true,
-                                message: "Masukkan URL Google Business",
-                            },
-                        ]}
+                        // rules={[
+                        //     {
+                        //         required: true,
+                        //         message: "Masukkan URL Google Business",
+                        //     },
+                        // ]}
                     >
                         <Input placeholder="Masukkan Google Business..." />
                     </Form.Item>
