@@ -114,7 +114,7 @@ export default function FormAccomodation({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan nama akomodasi",
+                                        message: "Nama Akomodasi wajib diisi",
                                     },
                                 ]}
                             >
@@ -128,7 +128,7 @@ export default function FormAccomodation({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan Kecamatan",
+                                        message: "Kecamatan wajib diisi",
                                     },
                                 ]}
                             >
@@ -142,7 +142,7 @@ export default function FormAccomodation({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan Desa/Kelurahan",
+                                        message: "Desa/Kelurahan wajib diisi",
                                     },
                                 ]}
                             >
@@ -152,47 +152,6 @@ export default function FormAccomodation({
                     </Row>
 
                     <Row gutter={16}>
-                        {/* <Col span={6}>
-                            <Form.Item
-                                label="Jenis Kategori"
-                                name="type_category"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: "Pilih jenis kategori",
-                                    },
-                                ]}
-                            >
-                                <Select placeholder="Pilih Jenis Kategori">
-                                    <Select.Option value="Umum">
-                                        Umum
-                                    </Select.Option>
-                                </Select>
-                            </Form.Item>
-                        </Col>
-                        <Col span={6}>
-                            <Form.Item
-                                label="Kategori"
-                                name="category_id"
-                                rules={[
-                                    {
-                                        required: true,
-                                        message: "Pilih kategori",
-                                    },
-                                ]}
-                            >
-                                <Select placeholder="Pilih Kategori">
-                                    {category.map((item) => (
-                                        <Select.Option
-                                            key={item.id}
-                                            value={item.id}
-                                        >
-                                            {item.name_category}
-                                        </Select.Option>
-                                    ))}
-                                </Select>
-                            </Form.Item>
-                        </Col> */}
                         <Col span={24}>
                             <Form.Item
                                 label="Alamat"
@@ -200,7 +159,7 @@ export default function FormAccomodation({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan alamat",
+                                        message: "Alamat wajib diisi",
                                     },
                                 ]}
                             >
@@ -249,7 +208,7 @@ export default function FormAccomodation({
                         label="Deskripsi"
                         name="description"
                         rules={[
-                            { required: true, message: "Masukkan deskripsi" },
+                            { required: true, message: "Deskripsi wajib diisi" },
                         ]}
                     >
                         <ReactQuill
@@ -264,9 +223,24 @@ export default function FormAccomodation({
                         label="Thumbnail"
                         name="thumbnail"
                         rules={[
-                            { required: true, message: "Upload thumbnail" },
+                            { required: true, message: "Thumbnail wajib diisi" },
                         ]}
                     >
+                    {/* Informasi Petunjuk */}
+                    <div
+                        style={{
+                            backgroundColor: "#FFFDF0",
+                            padding: 10,
+                            borderLeft: "6px solid orange",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                            marginBottom: 24,
+                            fontWeight: 320,
+                        }}
+                    >
+                        <Text>
+                            <b>Petunjuk Thumbnail:</b> Disarankan rasio gambar: 4:3 (landscape) | Maksimal ukuran file: 2 MB | Format jpg, jpeg, png, atau webp.
+                        </Text>
+                    </div>
                         <>
                             {process === "update" && thumbnailPreview ? (
                                 <div style={{ marginBottom: 10 }}>
@@ -345,8 +319,22 @@ export default function FormAccomodation({
                     <Form.Item
                         label="Foto"
                         name="photos"
-                        rules={[{ required: true, message: "Upload foto" }]}
+                        rules={[{ required: true, message: "Unggah minimal 1 foto" }]}
                     >
+                    <div
+                        style={{
+                            backgroundColor: "#FFFDF0",
+                            padding: 10,
+                            borderLeft: "6px solid orange",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                            marginBottom: 24,
+                            fontWeight: 320,
+                        }}
+                    >
+                        <Text>
+                            <b>Petunjuk Foto:</b> Unggah minimal 1 foto | Maksimal ukuran file: 2 MB | Format jpg, jpeg, png, atau webp.
+                        </Text>
+                    </div>
                         <>
                             {process === "update" &&
                             photosPreview.length > 0 ? (
@@ -459,7 +447,7 @@ export default function FormAccomodation({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan kontak",
+                                        message: "Kontak wajib diisi",
                                     },
                                 ]}
                             >
@@ -473,7 +461,7 @@ export default function FormAccomodation({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan kewenangan",
+                                        message: "Kewenangan wajib diisi",
                                     },
                                 ]}
                             >
@@ -531,23 +519,38 @@ export default function FormAccomodation({
                         label="Fasilitas"
                         name="facilities"
                         rules={[
-                            { required: true, message: "Masukkan fasilitas" },
+                            { required: true, message: "Fasilitas wajib diisi" },
                         ]}
                     >
+                    {/* Informasi Petunjuk */}
+                    <div
+                        style={{
+                            backgroundColor: "#FFFDF0",
+                            padding: 10,
+                            borderLeft: "6px solid orange",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                            marginBottom: 24,
+                            fontWeight: 320,
+                        }}
+                    >
+                        <Text>
+                            <b>Petunjuk Fasilitas:</b> Harap pisahkan dengan tanda koma (,).
+                        </Text>
+                    </div>
                         <Input placeholder="Masukkan Fasilitas..." />
                     </Form.Item>
 
                     <Form.Item
-                        label="Google Business"
+                        label="Google Business / Website"
                         name="google_business"
                         rules={[
                             {
                                 required: true,
-                                message: "Masukkan URL Google Business",
+                                message: "Wajib diisi",
                             },
                         ]}
                     >
-                        <Input placeholder="Masukkan Google Business..." />
+                        <Input placeholder="Masukkan URL Google Business atau Website..." />
                     </Form.Item>
 
                     <Form.Item name="is_published" valuePropName="checked">

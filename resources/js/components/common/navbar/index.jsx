@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { usePage } from "@inertiajs/inertia-react";
 import { DownOutlined } from "@ant-design/icons";
 import { Inertia } from "@inertiajs/inertia";
-import { NavbarMenu } from "../../../data/navbar/menu";
+import { NavbarMenu } from "../home-page/menu/menu";
 import { Link } from "@inertiajs/inertia-react";
 
 export default function NavBar() {
@@ -58,7 +58,7 @@ export default function NavBar() {
 
     const getLangIcon = (lang) => {
     if (lang === "id") {
-        return "assets/icon/emojione_flag-for-indonesia.svg";
+        return "/assets/icon/emojione_flag-for-indonesia.svg";
     } else if (lang === "en") {
         return "/assets/icon/circle-flags_lang-en.svg";
     }
@@ -72,7 +72,7 @@ export default function NavBar() {
                 label: (
                     <div onClick={() => handleChangeLanguage("id")}>
                         <img
-                            src="assets/icon/emojione_flag-for-indonesia.svg"
+                            src="/assets/icon/emojione_flag-for-indonesia.svg"
                             alt="ID"
                             style={{ width: 16, height: 16, marginRight: 8 }}
                         />
@@ -85,7 +85,7 @@ export default function NavBar() {
                 label: (
                     <div onClick={() => handleChangeLanguage("en")}>
                         <img
-                            src="assets/icon/circle-flags_lang-en.svg"
+                            src="/assets/icon/circle-flags_lang-en.svg"
                             alt="EN"
                             style={{ width: 16, height: 16, marginRight: 8 }}
                         />
@@ -113,7 +113,7 @@ export default function NavBar() {
                     height: "67px",
                     padding: "0 24px",
                     borderBottom: "none",
-                    position: "fixed",
+                    // position: "fixed",
                 }}
             >
                 <Flex

@@ -1,7 +1,7 @@
 import { Inertia } from "@inertiajs/inertia";
 import ActionTable from "../../common/action-table";
 
-export default function HealthFacilityColumns({ onDelete }) {
+const HealthFacilityColumns = ({ onDelete, onImageDetail }) => {
     const columns = [
         {
             title: "No",
@@ -66,9 +66,13 @@ export default function HealthFacilityColumns({ onDelete }) {
                     onDelete={() => {
                         onDelete(record.id);
                     }}
+                    onImageDetail={() => {
+                        onImageDetail(record);
+                    }}
                 />
             ),
         },
     ];
     return columns;
 }
+export default HealthFacilityColumns;

@@ -1,7 +1,7 @@
 import { Inertia } from "@inertiajs/inertia";
 import ActionTable from "../../common/action-table";
 
-export const TouristDestinationColumns = ({ onDelete }) => {
+export const TouristDestinationColumns = ({ onDelete, onImageDetail }) => {
     const columns = [
         {
             title: "No",
@@ -72,6 +72,9 @@ export const TouristDestinationColumns = ({ onDelete }) => {
                     }}
                     onDelete={() => {
                         onDelete(record.id);
+                    }}
+                    onImageDetail={() => {
+                        onImageDetail(record);
                     }}
                 />
             ),

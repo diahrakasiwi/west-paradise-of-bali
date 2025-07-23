@@ -129,7 +129,7 @@ export default function FormEvent({
                             rules={[
                                 {
                                     required: true,
-                                    message: "Masukkan Nama Acara",
+                                    message: "Nama Acara wajib diisi",
                                 },
                             ]}
                         >
@@ -144,7 +144,7 @@ export default function FormEvent({
                             rules={[
                                 {
                                     required: true,
-                                    message: "Pilih jenis kategori",
+                                    message: "Jenis Kategori wajib diisi",
                                 },
                             ]}
                         >
@@ -159,7 +159,7 @@ export default function FormEvent({
                             label="Kategori"
                             name="category_id"
                             rules={[
-                                { required: true, message: "Pilih kategori" },
+                                { required: true, message: "Kategori wajib diisi" },
                             ]}
                         >
                             <Select placeholder="Pilih Kategori">
@@ -266,7 +266,7 @@ export default function FormEvent({
                             rules={[
                                 {
                                     required: true,
-                                    message: "Deskripsi harus diisi",
+                                    message: "Deskripsi wajib diisi",
                                 },
                             ]}
                         >
@@ -347,7 +347,7 @@ export default function FormEvent({
                             label="Kontak"
                             name="contact"
                             rules={[
-                                { required: true, message: "Masukkan kontak" },
+                                { required: true, message: "Kontak wajib diisi" },
                             ]}
                         >
                             <Input placeholder="Masukkan Kontak..." />
@@ -360,7 +360,7 @@ export default function FormEvent({
                             rules={[
                                 {
                                     required: true,
-                                    message: "Masukkan kewenangan",
+                                    message: "Kewenangan wajib diisi",
                                 },
                             ]}
                         >
@@ -373,7 +373,7 @@ export default function FormEvent({
                             label="Alamat"
                             name="address"
                             rules={[
-                                { required: true, message: "Masukkan alamat" },
+                                { required: true, message: "Alamat wajib" },
                             ]}
                         >
                             <Input placeholder="Masukkan Alamat..." />

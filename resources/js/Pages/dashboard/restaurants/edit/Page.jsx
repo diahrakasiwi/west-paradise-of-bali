@@ -8,22 +8,24 @@ export default function EditRestaurant() {
     const { restaurant } = usePage().props;
 
     const handleSubmit = (values) => {
-        Inertia.put(`/dashboard/restaurants/${restaurant.id}`, values, {
-            onSuccess: () => {
-                notification.success({
-                    message: "Berhasil",
-                    description: "Restoran berhasil diupdate.",
-                });
-            },
-            onError: (errors) => {
-                notification.error({
-                    message: "Gagal",
-                    description:
-                        errors.name ||
-                        "Terjadi kesalahan saat update restoran.",
-                });
-            },
-        });
+        Inertia.put(
+            `/dashboard/restaurants/${restaurant.id}`, values, {
+                onSuccess: () => {
+                    notification.success({
+                        message: "Berhasil",
+                        description: "Restoran berhasil diupdate.",
+                    });
+                },
+                onError: (errors) => {
+                    notification.error({
+                        message: "Gagal",
+                        description:
+                            errors.name ||
+                            "Terjadi kesalahan saat update restoran.",
+                    });
+                },
+            }
+        );
     };
     const handleCancel = () => {
         Inertia.visit("/dashboard/restaurants");
@@ -35,7 +37,6 @@ export default function EditRestaurant() {
             process="update"
             onSubmit={handleSubmit}
             onCancel={handleCancel}
-            s
         />
     );
 }

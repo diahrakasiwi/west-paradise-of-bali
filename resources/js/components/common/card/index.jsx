@@ -41,7 +41,7 @@ export default function CustomCard({
         overflow: "hidden",
         margin: "0 auto",
         border: "none",
-        position: "relative",
+        position: "relative", 
         padding: 0,
         display: "flex",
         flexDirection: "column",
@@ -56,10 +56,7 @@ export default function CustomCard({
         },
       }}
       cover={
-        <Link
-          href={link}
-          style={{ textDecoration: "none", color: "inherit" }}
-        >
+        <Link href={link} style={{ textDecoration: "none", color: "inherit" }}>
           <div
             style={{
               position: "relative",

@@ -6,15 +6,11 @@ import translations from "../../../lang/lang";
 const { Paragraph } = Typography;
 
 export default function ReviewSection({ id, model, reviews, access, locale }) {
-    const filteredReviews = reviews.filter(
-        (review) =>
-            review.reviewable_id === id &&
-            review.reviewable_type === model
-    );
+    console.log(reviews);
 
     const ratingStats = [5, 4, 3, 2, 1].map((star) => {
-        const total = filteredReviews.length;
-        const count = filteredReviews.filter((r) => r.rating === star).length;
+        const total = reviews.length;
+        const count = reviews.filter((r) => r.rating === star).length;
         return {
             star,
             percent: total > 0 ? Math.round((count / total) * 100) : 0,
@@ -22,33 +18,41 @@ export default function ReviewSection({ id, model, reviews, access, locale }) {
     });
 
     const averageRating =
-        filteredReviews.length > 0
+        reviews.length > 0
             ? (
-                  filteredReviews.reduce((sum, r) => sum + r.rating, 0) /
-                  filteredReviews.length
+                  reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length
               ).toFixed(1)
             : 0;
 
     const t = translations[locale || "id"];
 
     return (
-        <div style={{ padding: 24, borderRadius: 10 }}>
-            <Typography.Title level={4} style={{ fontWeight: 700 }}>
+        <div style={{ 
+                padding: 24,
+                borderRadius: 10, 
+                background: "#ffff", 
+                border: "1px solid #f0f0f0", 
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.02)"
+            }}
+        >
+            <Typography.Title level={4} style={{ fontWeight: 600, marginLeft: 50 }}>
+                {" "}
                 {t.label.ratingAndReview}
             </Typography.Title>
 
             <div
                 style={{
-                    display: "flex",
-                    gap: 32,
+                    display: "grid",
+                    gridTemplateColumns: "1fr auto",
                     alignItems: "center",
-                    flexWrap: "wrap",
+                    gap: 24,
                     marginBottom: 24,
                     marginTop: 8,
                 }}
             >
+
                 {/* Kiri - Distribusi bintang */}
-                <div style={{ minWidth: 200 }}>
+                <div style={{ minWidth: 150 }}>
                     {ratingStats.map((item) => (
                         <div
                             key={item.star}
@@ -77,7 +81,7 @@ export default function ReviewSection({ id, model, reviews, access, locale }) {
                                 percent={item.percent}
                                 showInfo={false}
                                 strokeColor="#176B5D"
-                                style={{ flex: 1, marginLeft: 8 }}
+                                style={{ flex: 1, marginLeft: 1 }}
                             />
                         </div>
                     ))}
@@ -87,8 +91,9 @@ export default function ReviewSection({ id, model, reviews, access, locale }) {
                 <div
                     style={{
                         textAlign: "center",
-                        fontSize: 48,
-                        fontWeight: 700,
+                        fontSize: 35,
+                        fontWeight: 600,
+                        minWidth: 100,
                     }}
                 >
                     {averageRating}
@@ -97,10 +102,11 @@ export default function ReviewSection({ id, model, reviews, access, locale }) {
                             disabled
                             allowHalf
                             defaultValue={parseFloat(averageRating)}
+                            style={{ color: "#EEA641", fontSize: 14}}
                         />
                         <div style={{ fontSize: 14, marginTop: 4 }}>
                             {reviews.length} Review
-                            {filteredReviews.length !== 1 ? "s" : ""}
+                            {reviews.length !== 1 ? "s" : ""}
                         </div>
                     </div>
                 </div>
@@ -109,7 +115,7 @@ export default function ReviewSection({ id, model, reviews, access, locale }) {
             <Divider />
 
             {/* Ulasan */}
-            {filteredReviews.length === 0 ? (
+            {reviews.length === 0 ? (
                 <Empty
                     description={
                         <div>
@@ -120,7 +126,7 @@ export default function ReviewSection({ id, model, reviews, access, locale }) {
                     }
                 />
             ) : (
-                filteredReviews.slice(0, 3).map((review, index) => (
+                reviews.slice(0, 3).map((review, index) => (
                     <div key={index} style={{ marginBottom: 24 }}>
                         <div style={{ fontWeight: 600, marginBottom: 7 }}>
                             {review.name}
@@ -135,7 +141,7 @@ export default function ReviewSection({ id, model, reviews, access, locale }) {
                             <Rate
                                 disabled
                                 defaultValue={review.rating}
-                                style={{ fontSize: 16 }}
+                                style={{ fontSize: 16, color: "#EEA641" }}
                             />{" "}
                             <span style={{ marginLeft: 8 }}>
                                 {review.relative_time}

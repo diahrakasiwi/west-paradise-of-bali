@@ -99,15 +99,6 @@ export default function FormSelectTouristDestination({
                         ))}
                     </Select>
                 </Col>
-                {/* <Col span={6}>
-                    <Button
-                        type="primary"
-                        htmlType="submit"
-                        style={{ width: "100%" }}
-                    >
-                        Submit
-                    </Button>
-                </Col> */}
             </Row>
         </Form>
     );

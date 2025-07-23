@@ -110,9 +110,18 @@ export default function SearchLocationContent() {
                 </Paragraph>
                 {isSearching ? (
                     searchResults.length > 0 ? (
-                        <Row gutter={[24, 24]} justify="center">
+                        <Row gutter={[16, 24]} justify="center">
                             {searchResults.map((item) => (
-                                <Col key={item.id} xs={24} sm={12} md={8} lg={6}>
+                                <Col 
+                                key={item.id} 
+                                xs={24} 
+                                sm={12} 
+                                md={8} 
+                                lg={6} 
+                                style={{
+                                    display: "flex",
+                                    justifyContent: "center",
+                                }}>
                                     <CustomCard
                                         id={item.id}
                                         name={item.name}
@@ -123,9 +132,15 @@ export default function SearchLocationContent() {
                                         locale={locale}
                                         type="destination"
                                         model={item.views?.[0]?.type}
-                                    // ✅ pakai item.type dari API
+                                            style={{
+                                            borderRadius: 42,
+                                            boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
+                                            minWidth: 290,
+                                            maxWidth: 340,
+                                            width: "100%",
+                                            margin: "0 auto",
+                                        }}
                                     />
-
                                 </Col>
                             ))}
                         </Row>
@@ -135,9 +150,18 @@ export default function SearchLocationContent() {
                         </div>
                     )
                 ) : (
-                    <Row gutter={[24, 24]} justify="center">
+                    <Row gutter={[16, 24]} justify="center">
                         {data.map((item) => (
-                            <Col key={item.id} xs={24} sm={12} md={8} lg={6}>
+                            <Col
+                            key={item.id} 
+                            xs={24} 
+                            sm={12} 
+                            md={8} 
+                            lg={6} 
+                            style={{
+                                display: "flex",
+                                justifyContent: "center",
+                            }}>
                                 <CustomCard
                                     id={item.id}
                                     name={item.name}
@@ -148,9 +172,15 @@ export default function SearchLocationContent() {
                                     locale={locale}
                                     type="destination"
                                     model={item.views?.[0]?.type}
-                                // ✅ pakai item.type dari API
+                                        style={{
+                                        borderRadius: 42,
+                                        boxShadow: "0 8px 32px rgba(0,0,0,0.10)",
+                                        minWidth: 290,
+                                        maxWidth: 340,
+                                        width: "100%",
+                                        margin: "0 auto",
+                                    }}
                                 />
-
                             </Col>
                         ))}
                     </Row>

@@ -291,10 +291,11 @@ export default function FormTouristDestination({
                             { required: true, message: "Thumbnail wajib diisi" },
                         ]}
                     >
+                    {/* Informasi Petunjuk */}
                     <div
                         style={{
-                            backgroundColor: "#fff",
-                            padding: 18,
+                            backgroundColor: "#FFFDF0",
+                            padding: 10,
                             borderLeft: "6px solid orange",
                             boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
                             marginBottom: 24,
@@ -385,10 +386,10 @@ export default function FormTouristDestination({
                         name="photos"
                         rules={[{ required: true, message: "Unggah minimal 1 foto" }]}
                     >
-                        <div
+                    <div
                         style={{
-                            backgroundColor: "#fff",
-                            padding: 18,
+                            backgroundColor: "#FFFDF0",
+                            padding: 10,
                             borderLeft: "6px solid orange",
                             boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
                             marginBottom: 24,
@@ -525,7 +526,7 @@ export default function FormTouristDestination({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan kewenangan",
+                                        message: "Kewenangan wajib diisi",
                                     },
                                 ]}
                             >
@@ -583,23 +584,38 @@ export default function FormTouristDestination({
                         label="Fasilitas"
                         name="facilities"
                         rules={[
-                            { required: true, message: "Masukkan fasilitas" },
+                            { required: true, message: "Fasilitas wajib diisi" },
                         ]}
                     >
+                    {/* Informasi Petunjuk */}
+                    <div
+                        style={{
+                            backgroundColor: "#FFFDF0",
+                            padding: 10,
+                            borderLeft: "6px solid orange",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                            marginBottom: 24,
+                            fontWeight: 320,
+                        }}
+                    >
+                        <Text>
+                            <b>Petunjuk Fasilitas:</b> Harap pisahkan dengan tanda koma (,).
+                        </Text>
+                    </div>
                         <Input placeholder="Masukkan Fasilitas..." />
                     </Form.Item>
 
                     <Form.Item
-                        label="Google Business"
+                        label="Google Business / Website"
                         name="google_business"
-                        // rules={[
-                        //     {
-                        //         required: true,
-                        //         message: "Masukkan URL Google Business",
-                        //     },
-                        // ]}
+                        rules={[
+                            {
+                                required: true,
+                                message: "Wajib diisi",
+                            },
+                        ]}
                     >
-                        <Input placeholder="Masukkan Google Business..." />
+                        <Input placeholder="Masukkan URL Google Business atau Website" />
                     </Form.Item>
 
                     <Form.Item name="is_published" valuePropName="checked">

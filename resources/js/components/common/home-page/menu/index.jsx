@@ -42,12 +42,16 @@ export default function HomePageMenuSection({ lang, locale }) {
                                     display: "flex",
                                     flexDirection: "column",
                                     alignItems: "center",
+                                    justifyContent: "center",
                                     textAlign: "center",
                                     color: "#222",
                                     padding: "16px 8px",
                                     borderRadius: 16,
-                                    height: "100%",
-                                    boxShadow: "0 2px 8px rgba(0,0,0,0.03)",
+                                    width: "100%",
+                                    maxWidth: 160,
+                                    height: 120,
+                                    boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
+                                    // backgroundColor: "#f0f0f0",
                                     transition: "transform 0.2s ease",
                                 }}
                                 onMouseEnter={(e) => {
@@ -59,7 +63,7 @@ export default function HomePageMenuSection({ lang, locale }) {
                                         "translateY(0)";
                                 }}
                             >
-                                <div style={{ fontSize: 36, marginBottom: 12 }}>
+                                <div style={{ fontSize: 36, marginBottom: 2 }}>
                                     {item.icon}
                                 </div>
                                 <div

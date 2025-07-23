@@ -1,10 +1,22 @@
 import { Input, Space } from "antd";
 
-export default function SearchBar({ onSearch, onChange, value, width }) {
+const translations = {
+  id: {
+    placeholder: "Masukkan kata kunci...",
+    search: "Cari",
+  },
+  en: {
+    placeholder: "Enter keyword...",
+    search: "Search",
+  },
+};
+
+export default function SearchBar({ onSearch, value, width, locale = "id" }) {
+  const t = translations[locale] || translations["id"];
     return (
         <Space direction="horizontal">
             <Input.Search
-                placeholder="Tulis disini..."
+                placeholder="Masukkan kata kunci..."
                 allowClear
                 enterButton="Cari"
                 onSearch={onSearch}

@@ -1,7 +1,7 @@
 import { Inertia } from "@inertiajs/inertia";
 import ActionTable from "../../common/action-table";
 
-export default function RestaurantColumns({ onDelete }) {
+const RestaurantColumns = ({ onDelete, onImageDetail }) => {
     const columns = [
         {
             title: "No",
@@ -10,7 +10,7 @@ export default function RestaurantColumns({ onDelete }) {
         },
         {
             title: "Nama Restoran",
-            dataIndex: "name",
+            dataIndex: "name", 
             key: "name",
         },
         {
@@ -66,9 +66,13 @@ export default function RestaurantColumns({ onDelete }) {
                     onDelete={() => {
                         onDelete(record.id);
                     }}
+                    onImageDetail={() => {
+                        onImageDetail(record);
+                    }}
                 />
             ),
         },
     ];
     return columns;
 }
+export default RestaurantColumns;

@@ -32,8 +32,8 @@ export default function CustomFooter({ locale }) {
                     <Col xs={24} md={10} className="footer-column">
                         <div style={{ marginBottom: 36 }}>
                             <h3 className="brand-title">
-                                West of Paradise
-                                <span className="brand-subtitle">of Bali</span>
+                                Bali West
+                                <span className="brand-subtitle">Paradise</span>
                             </h3>
                         </div>
                         <Text className="footer-desc">
@@ -69,7 +69,7 @@ export default function CustomFooter({ locale }) {
                         </h4>
                         <ul className="footer-social">
                             <li>
-                                <a href="https://www.tiktok.com/@jahkejembrana?_t=ZS-8xm9pB1CtuP&_r=1">
+                                <a href="https://www.tiktok.com/@welcome.jembrana?_t=ZS-8yGEWwYu9S4&_r=1">
                                 <TikTokOutlined /> Tiktok 
                                 </a>
                             </li>
@@ -79,12 +79,12 @@ export default function CustomFooter({ locale }) {
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.facebook.com/profile.php?id=100058304216758">
+                                <a href="https://www.facebook.com/share/1XftPv7x3T/?mibextid=qi2Omg">
                                 <FacebookOutlined /> Facebook
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/disparbudkabjembrana?igsh=YTVleXVhNHFpZmFm">
+                                <a href="https://www.instagram.com/jahjembrana">
                                 <InstagramOutlined /> Instagram
                                 </a>
                             </li>
@@ -103,7 +103,7 @@ export default function CustomFooter({ locale }) {
                                 marginBottom: 8,
                             }}
                         >
-                            {t.footer.call}: (0365) 41210
+                            {t.footer.call}: 08xxx
                         </div>
                         <div
                             style={{
@@ -118,8 +118,7 @@ export default function CustomFooter({ locale }) {
                 </Row>
                 <div className="footer-bottom">
                     <p>
-                        © {new Date().getFullYear()} Disparbud Jembrana | All
-                        rights raserved
+                        © {new Date().getFullYear()} Komunitas Pariwisata Jembrana | powered by Triloka
                     </p>
                 </div>
             </div>

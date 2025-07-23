@@ -65,7 +65,7 @@ export default function FormNews({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan Judul Berita",
+                                        message: "Judul Berita wajib diisi",
                                     },
                                 ]}
                             >
@@ -80,7 +80,7 @@ export default function FormNews({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Upload thumbnail",
+                                        message: "Thumbnail wajib diisi",
                                     },
                                 ]}
                             >
@@ -169,7 +169,7 @@ export default function FormNews({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Deskripsi harus diisi",
+                                        message: "Deskripsi wajib diisi",
                                     },
                                 ]}
                             >

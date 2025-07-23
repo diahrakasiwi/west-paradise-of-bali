@@ -36,22 +36,24 @@ export default function AboutContent({ locale }) {
                                 textAlign: "center",
                             }}
                         >
-                            {t.aboutSection.title}
+                            Tentang{/* {t.aboutSection.title} */}
                         </Title>
                         <Title
                             level={2}
                             style={{
                                 margin: "0 0 16px",
-                                fontWeight: 700,
+                                fontWeight: 600,
                                 lineHeight: 1.1,
-                                fontSize: "clamp(32px, 6vw, 50px)",
+                                fontSize: "clamp(32px, 6vw, 45px)",
                                 fontFamily: "Playfair Display",
                                 textAlign: "center",
                             }}
                         >
-                            West Paradise
+                            Bali West Paradise
                             <br />
-                            of Bali
+                            &
+                            <br />
+                            Welcome Jembrana
                         </Title>
                     </Col>
                     <Col xs={24} md={14}>
@@ -65,8 +67,13 @@ export default function AboutContent({ locale }) {
                         >
                             {t.aboutSection.paragraph}
                             <br />
-                            <br />
                             {t.aboutSection.paragraph2}
+                            <br />
+                            <br />
+                            {t.aboutSection.paragraph3}
+                            <br />
+                            <br />
+                            {t.aboutSection.paragraph4}
                         </Paragraph>
                     </Col>
                 </Row>

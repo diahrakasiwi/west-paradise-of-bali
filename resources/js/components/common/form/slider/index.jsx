@@ -46,33 +46,6 @@ export default function FormSlider({
                     { required: true, message: "Upload gambar diperlukan" },
                 ]}
             >
-                {/* <>
-                    {thumbnailPreview && (
-                        <img
-                            src={thumbnailPreview}
-                            alt="Preview"
-                            style={{
-                                border: "1px dashed #ccc",
-                                width: "100%",
-                                marginBottom: 10,
-                                borderRadius: 8,
-                            }}
-                        />
-                    )}
-                    <SupaImageUploader
-                        folder="sliders"
-                        bucket="images"
-                        label="Upload Gambar"
-                        onUpload={(path) => {
-                            const { data } = supabase.storage
-                                .from("images")
-                                .getPublicUrl(path);
-                            const imageUrl = data.publicUrl;
-                            setThumbnailPreview(imageUrl);
-                            form.setFieldsValue({ image_url: imageUrl });
-                        }}
-                    />
-                </> */}
 
                 <>
                     {process === "update" && thumbnailPreview ? (

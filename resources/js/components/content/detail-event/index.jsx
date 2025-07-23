@@ -76,7 +76,7 @@ export default function DetailEventContent() {
                                 fontWeight: 500,
                             }}
                         >
-                            Kembali ke Daftar Acara
+                            Kembali ke Pilihan Acara
                         </span>
                     </Flex>
                     <div

@@ -1,7 +1,7 @@
 import { Inertia } from "@inertiajs/inertia";
 import ActionTable from "../../common/action-table";
 
-export default function EventColumns({ onDelete }) {
+const EventColumns = ({ onDelete, onImageDetail }) => {
     const columns = [
         {
             title: "No",
@@ -61,9 +61,13 @@ export default function EventColumns({ onDelete }) {
                     onDelete={() => {
                         onDelete(record.id);
                     }}
+                    onImageDetail={() => {
+                        onImageDetail(record);
+                    }}
                 />
             ),
         },
     ];
     return columns;
 }
+export default EventColumns;

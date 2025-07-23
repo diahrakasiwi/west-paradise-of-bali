@@ -1,7 +1,7 @@
 import { Inertia } from "@inertiajs/inertia";
 import ActionTable from "../../common/action-table";
 
-export default function NewsColumns({ onDelete }) {
+const NewsColumns = ({ onDelete, onImageDetail }) => {
     const columns = [
         {
             title: "No",
@@ -10,7 +10,7 @@ export default function NewsColumns({ onDelete }) {
         },
         {
             title: "Judul Berita",
-            dataIndex: "title",
+            dataIndex: "title", 
             key: "title",
         },
         {
@@ -51,9 +51,13 @@ export default function NewsColumns({ onDelete }) {
                     onDelete={() => {
                         onDelete(record.id);
                     }}
+                    onImageDetail={() => {
+                        onImageDetail(record);
+                    }}
                 />
             ),
         },
     ];
     return columns;
 }
+export default NewsColumns;

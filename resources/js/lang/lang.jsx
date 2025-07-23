@@ -53,14 +53,19 @@ const translations = {
             noEvent: "Belum ada acara",
         },
         aboutSection: {
-            title: "Tentang",
-            subtitle: "West Paradise of Bali",
-            description:
-                "Ketahui tujuan dan peran West Paradise of Bali dalam memperkenalkan pesona Jembrana. Kami hadir sebagai panduan wisata terpercaya untuk menjelajahi Bali Barat.",
-            paragraph:
-                "West Paradise of Bali adalah sebuah platform digital yang dirancang untuk memperkenalkan dan mempermudah akses informasi tentang pariwisata di   Kabupaten Jembrana, Bali Barat. Website ini hadir sebagai jendela utama bagi wisatawan untuk menjelajahi potensi wisata alam, budaya, dan pengalaman lokal yang otentik di sisi barat Pulau  Bali.",
-            paragraph2:
-                " Dengan antarmuka yang ramah pengguna dan konten yang dikurasi secara informatif, website West Paradise of Bali membantu pengunjung menemukan destinasi  terbaik, perencanaan perjalanan secara efisien dan menyenangkan, sekaligus mendorong pariwisata yang  berkelanjutan.",
+    title: "Tentang Kami",
+    subtitle: "Bali West Paradise",
+    description:
+        "Ketahui tujuan dan peran West Paradise of Bali dalam memperkenalkan pesona Jembrana. Kami hadir sebagai panduan wisata terpercaya untuk menjelajahi Bali Barat.",
+    paragraph:
+        "Welcome Jembrana – Bali West Paradise",
+    paragraph2:
+        "Selamat datang di Jembrana, sisi barat Bali yang belum banyak dijelajahi—tempat di mana keaslian budaya, alam yang megah, dan keramahan lokal menyatu dalam harmoni. Welcome Jembrana adalah gerbang digital menuju pengalaman pariwisata yang berbeda, dirancang untuk mengangkat potensi daerah bersama komunitas pariwisata Jembrana.",
+    paragraph3:
+        "Dengan tagline “Bali West Paradise”, platform ini memperkenalkan 13 destinasi unggulan yang memikat: dari pantai eksotis, perbukitan hijau, hingga desa adat yang kaya cerita. Ini bukan sekadar daftar tempat, tapi undangan untuk merasakan Bali yang lebih otentik, tenang, dan penuh kejutan.",
+    paragraph4:
+        "Welcome Jembrana tak hanya menyuguhkan informasi, tapi membangun ekosistem pariwisata yang inklusif—menghubungkan wisatawan, UMKM, kreator lokal, dan pelaku pariwisata dalam satu ruang kolaboratif. Kini saatnya menengok ke barat. Karena surga Bali juga tumbuh di Jembrana.",
+
             textFeatures: "Fitur Utama",
             locationUs: "Lokasi Kami",
             features: [
@@ -112,7 +117,7 @@ const translations = {
             title: "Rencanakan Liburan Anda ke Jembrana Bumi Mekepung",
             subtitle: "Sekarang!",
             description:
-                "Temukan pesona Bali Barat yang masih alami dan kaya akan budaya.",
+                "Jelajahi sisi barat Bali yang autentik bersama Welcome Jembrana - Bali West Paradise!",
             brandSubtitle: "of Bali",
             quickLinks: "Tautan Cepat",
             socialMedia: "Media Sosial",
@@ -124,7 +129,7 @@ const translations = {
                 "Website ini hadir sebagai platform informasi pariwisata resmi untuk memudahkan pengunjung dalam menemukan destinasi menarik, aktivitas wisata, serta informasi pendukung lainnya seputar perjalanan ke Jembrana.",
             call: "Hubungi Kami",
             location: "Lokasi",
-            street: "Jalan. Suropati No.1, Dauhwaru, Kec. Negara, Kabupaten Jembrana, Bali 82218"
+            street: "Jembrana - Bali"
         },
         destination: {
             hero: {

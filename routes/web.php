@@ -17,6 +17,7 @@ use App\Http\Controllers\TouristDestinationController;
 use App\Http\Controllers\TransportationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VillageController;
+use App\Models\Event;
 use App\Models\Review;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -69,6 +70,7 @@ Route::get('/dashboard/events/{id}/edit', [EventController::class, 'edit'])->mid
 Route::put('/dashboard/events/{id}', [EventController::class, 'update'])->middleware('auth');
 Route::get('/dashboard/events/{id}', [EventController::class, 'show'])->middleware('auth');
 Route::delete('/dashboard/events/{id}', [EventController::class, 'destroy'])->middleware('auth');
+Route::get('/dashboard/events/{id}/images', [EventController::class, 'images'])->middleware('auth'); //tambahan
 
 Route::get('/dashboard/news', [NewsController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/news/create', [NewsController::class, 'create'])->middleware('auth');
@@ -77,6 +79,7 @@ Route::get('/dashboard/news/{id}/edit', [NewsController::class, 'edit'])->middle
 Route::put('/dashboard/news/{id}', [NewsController::class, 'update'])->middleware('auth');
 Route::get('/dashboard/news/{id}', [NewsController::class, 'show'])->middleware('auth');
 Route::delete('/dashboard/news/{id}', [NewsController::class, 'destroy'])->middleware('auth');
+Route::get('/dashboard/news/{id}/images', [NewsController::class, 'images'])->middleware('auth'); //tambahan
 
 Route::get('/dashboard/health-facilities', [HealthFacilityController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/health-facilities/create', [HealthFacilityController::class, 'create'])->middleware('auth');
@@ -85,6 +88,7 @@ Route::get('/dashboard/health-facilities/{id}/edit', [HealthFacilityController::
 Route::put('/dashboard/health-facilities/{id}', [HealthFacilityController::class, 'update'])->middleware('auth');
 Route::get('/dashboard/health-facilities/{id}', [HealthFacilityController::class, 'show'])->middleware('auth');
 Route::delete('/dashboard/health-facilities/{id}', [HealthFacilityController::class, 'destroy'])->middleware('auth');
+Route::get('/dashboard/health-facilities/{id}/images', [HealthFacilityController::class, 'images'])->middleware('auth'); //tambahan
 
 Route::get('/dashboard/transportations', [TransportationController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/transportations/create', [TransportationController::class, 'create'])->middleware('auth');
@@ -93,6 +97,7 @@ Route::get('/dashboard/transportations/{id}/edit', [TransportationController::cl
 Route::put('/dashboard/transportations/{id}', [TransportationController::class, 'update'])->middleware('auth');
 Route::get('/dashboard/transportations/{id}', [TransportationController::class, 'show'])->middleware('auth');
 Route::delete('/dashboard/transportations/{id}', [TransportationController::class, 'destroy'])->middleware('auth');
+Route::get('/dashboard/transportations/{id}/images', [TransportationController::class, 'images'])->middleware('auth'); //tambahan
 
 Route::get('/dashboard/accommodations', [AccomodationController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/accommodations/create', [AccomodationController::class, 'create'])->middleware('auth');
@@ -101,6 +106,7 @@ Route::get('/dashboard/accommodations/{id}/edit', [AccomodationController::class
 Route::put('/dashboard/accommodations/{id}', [AccomodationController::class, 'update'])->middleware('auth');
 Route::get('/dashboard/accommodations/{id}', [AccomodationController::class, 'show'])->middleware('auth');
 Route::delete('/dashboard/accommodations/{id}', [AccomodationController::class, 'destroy'])->middleware('auth');
+Route::get('/dashboard/accommodations/{id}/images', [AccomodationController::class, 'images'])->middleware('auth'); //tambahan
 
 Route::get('/dashboard/creative-economy', [CreativeEconomyController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/creative-economy/create', [CreativeEconomyController::class, 'create'])->middleware('auth');
@@ -109,6 +115,7 @@ Route::get('/dashboard/creative-economy/{id}/edit', [CreativeEconomyController::
 Route::put('/dashboard/creative-economy/{id}', [CreativeEconomyController::class, 'update'])->middleware('auth');
 Route::get('/dashboard/creative-economy/{id}', [CreativeEconomyController::class, 'show'])->middleware('auth');
 Route::delete('/dashboard/creative-economy/{id}', [CreativeEconomyController::class, 'destroy'])->middleware('auth');
+Route::get('/dashboard/creative-economy/{id}/images', [CreativeEconomyController::class, 'images'])->middleware('auth'); //tambahan
 
 Route::get('/dashboard/restaurants', [RestaurantController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/restaurants/create', [RestaurantController::class, 'create'])->middleware('auth');
@@ -117,6 +124,7 @@ Route::get('/dashboard/restaurants/{id}/edit', [RestaurantController::class, 'ed
 Route::put('/dashboard/restaurants/{id}', [RestaurantController::class, 'update'])->middleware('auth');
 Route::get('/dashboard/restaurants/{id}', [RestaurantController::class, 'show'])->middleware('auth');
 Route::delete('/dashboard/restaurants/{id}', [RestaurantController::class, 'destroy'])->middleware('auth');
+Route::get('/dashboard/restaurants/{id}/images', [RestaurantController::class, 'images'])->middleware('auth'); //tambahan
 
 
 Route::get('/dashboard/villages', [VillageController::class, 'index'])->middleware('auth');
@@ -126,6 +134,7 @@ Route::get('/dashboard/villages/{id}/edit', [VillageController::class, 'edit'])-
 Route::put('/dashboard/villages/{id}', [VillageController::class, 'update'])->middleware('auth');
 Route::get('/dashboard/villages/{id}', [VillageController::class, 'show'])->middleware('auth');
 Route::delete('/dashboard/villages/{id}', [VillageController::class, 'destroy'])->middleware('auth');
+Route::get('/dashboard/villages/{id}/images', [VillageController::class, 'images'])->middleware('auth'); //tambahan
 
 
 Route::get('/dashboard/tourist-destinations', [TouristDestinationController::class, 'index'])->middleware('auth');
@@ -134,6 +143,9 @@ Route::post('/dashboard/tourist-destinations', [TouristDestinationController::cl
 Route::get('/dashboard/tourist-destinations/{id}/edit', [TouristDestinationController::class, 'edit'])->middleware('auth');
 Route::put('/dashboard/tourist-destinations/{id}', [TouristDestinationController::class, 'update'])->middleware('auth');
 Route::delete('/dashboard/tourist-destinations/{id}', [TouristDestinationController::class, 'destroy'])->middleware('auth');
+Route::get('/dashboard/tourist-destinations/{id}/images', [TouristDestinationController::class, 'images'])->middleware('auth'); //tambahan
+Route::get('/destination/{id}', [TouristDestinationController::class, 'show'])->name('destination.show'); //tambah
+
 
 Route::get('/dashboard/categories', [CategoryController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/categories/create', [CategoryController::class, 'create'])->middleware('auth');
@@ -155,6 +167,7 @@ Route::post('/review', [HomeController::class, 'createReview']);
 Route::get('/detail-event', [HomeController::class, 'detailEvent']);
 Route::get('/search-location', [HomeController::class, 'searchPage']);
 Route::get('/search', [HomeController::class, 'searchLocation'])->name('search');
+Route::get('/destination/{type}/{id}', [ReviewController::class, 'getReviewsByDestination']);
 
 Route::get('/admin', function () {
     return Inertia::render('Login');
@@ -167,3 +180,7 @@ Route::post('/logout', function () {
     request()->session()->regenerateToken(); // regenerasi CSRF token
     return redirect('/admin'); // kembali ke halaman login
 })->name('logout');
+
+Route::get('/paket-wisata/detail', function () {
+    return Inertia::render('home/PaketWisata/Detail');
+});

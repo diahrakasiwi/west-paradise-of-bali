@@ -1,7 +1,7 @@
 import { Inertia } from "@inertiajs/inertia";
 import ActionTable from "../../common/action-table";
 
-export default function CreativeEconomyColumns({ onDelete }) {
+const CreativeEconomyColumns = ({ onDelete, onImageDetail }) => {
     const columns = [
         {
             title: "No",
@@ -68,9 +68,13 @@ export default function CreativeEconomyColumns({ onDelete }) {
                     onDelete={() => {
                         onDelete(record.id);
                     }}
+                    onImageDetail={() => {
+                        onImageDetail(record);
+                    }}
                 />
             ),
         },
     ];
     return columns;
 }
+export default CreativeEconomyColumns;

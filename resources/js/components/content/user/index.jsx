@@ -7,7 +7,7 @@ import SearchBar from "../../common/search";
 import { UserColumns } from "./colums";
 
 export default function UserContent() {
-    const { users } = usePage().props;
+    const { users, locale } = usePage().props;
 
     const columns = UserColumns({
         onDelete: (id) => {
@@ -47,7 +47,7 @@ export default function UserContent() {
                         title="Tambah Akun"
                     />
 
-                    <SearchBar />
+                    <SearchBar locale={locale} />
                 </Flex>
                 <Table columns={columns} dataSource={users} rowKey="id" />
             </Card>

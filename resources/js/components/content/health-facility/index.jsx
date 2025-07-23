@@ -1,7 +1,7 @@
 import { usePage } from "@inertiajs/inertia-react";
 import HealthFacilityColumns from "./colums";
 import { Inertia } from "@inertiajs/inertia";
-import { Card, Flex, notification, Table } from "antd";
+import { Card, Flex, notification, Table, Modal } from "antd";
 import FormSelectHealthFacility from "../../common/select/health-facility";
 import AddButton from "../../common/add-button";
 import SearchBar from "../../common/search";
@@ -13,8 +13,10 @@ export default function HealthFacilitiesContent() {
     const [searchValue, setSearchValue] = useState("");
     const [selectedDistrict, setSelectedDistrict] = useState("");
     const [selectedVillage, setSelectedVillage] = useState("");
-    const [filteredFacilities, setFilteredFacilities] =
-        useState(healthFacilities);
+    const [filteredFacilities, setFilteredFacilities] = useState(healthFacilities);
+
+    const [previewVisible, setPreviewVisible] = useState(false);
+    const [previewData, setPreviewData] = useState(null);
 
     const columns = HealthFacilityColumns({
         onDelete: (id) => {
@@ -35,13 +37,18 @@ export default function HealthFacilitiesContent() {
                 },
             });
         },
+        onImageDetail: (record) => {
+        console.log("PREVIEW RECORD:", JSON.stringify(record, null, 2));
+            setPreviewData(record);
+            setPreviewVisible(true);
+        },
     });
 
     useEffect(() => {
         const filtered = healthFacilities.filter((item) => {
             const matchSearch = item.name
-                ?.toLowerCase()
-                .includes(searchValue?.toLowerCase());
+                .toLowerCase()
+                .includes(searchValue.toLowerCase());
 
             const matchDistrict = selectedDistrict
                 ? item.district === selectedDistrict
@@ -94,6 +101,44 @@ export default function HealthFacilitiesContent() {
                     pagination={{ position: ["bottomRight"] }}
                 />
             </Card>
+            {/* MODAL DETAIL GAMBAR */}
+            {previewData && (
+            <Modal
+                visible={!!previewData}
+                onCancel={() => setPreviewData(null)}
+                footer={null}
+            >
+                <h2>Detail Gambar</h2>
+
+                <p><strong>Thumbnail:</strong></p>
+                <img
+                src={previewData.thumbnail}
+                alt="Thumbnail"
+                style={{ width: "100%", maxHeight: 300, objectFit: "cover", borderRadius: 8 }}
+                />
+
+                {/* Tambahkan ini untuk menampilkan galeri */}
+                {previewData.images && previewData.images.length > 0 && (
+                <>
+                    <p style={{ marginTop: 16 }}><strong>Foto:</strong></p>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                    {previewData.images.map((img, index) => (
+                        <img
+                        key={index}
+                        src={img.image_url}
+                        alt={`Gallery ${index + 1}`}
+                        style={{
+                            width: "48%",
+                            borderRadius: 8,
+                            objectFit: "cover",
+                        }}
+                        />
+                    ))}
+                    </div>
+                </>
+                )}
+            </Modal>
+            )}
         </div>
     );
 }

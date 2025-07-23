@@ -48,7 +48,7 @@ export default function FormUser({
                             rules={[
                                 {
                                     required: true,
-                                    message: "Masukkan NIK Admin",
+                                    message: "NIK Admin wajib diisi",
                                 },
                             ]}
                         >
@@ -64,7 +64,7 @@ export default function FormUser({
                             rules={[
                                 {
                                     required: true,
-                                    message: "Masukkan Nama Admin",
+                                    message: "Nama Admin wajib diisi",
                                 },
                             ]}
                         >
@@ -78,7 +78,7 @@ export default function FormUser({
                             rules={[
                                 {
                                     required: true,
-                                    message: "Masukkan Email Admin",
+                                    message: "Email Admin wajib diisi",
                                 },
                                 {
                                     type: "email",
@@ -115,7 +115,7 @@ export default function FormUser({
                                     ? [
                                           {
                                               required: true,
-                                              message: "Masukkan Password",
+                                              message: "Password wajib diisi",
                                           },
                                       ]
                                     : []

@@ -1,7 +1,7 @@
 import { Inertia } from "@inertiajs/inertia";
 import ActionTable from "../../common/action-table";
 
-export default function AccomodationColumns({ onDelete }) {
+const AccomodationColumns = ({ onDelete, onImageDetail }) => {
     const columns = [
         {
             title: "No",
@@ -68,9 +68,13 @@ export default function AccomodationColumns({ onDelete }) {
                     onDelete={() => {
                         onDelete(record.id);
                     }}
+                    onImageDetail={() => {
+                        onImageDetail(record);
+                    }}
                 />
             ),
         },
     ];
     return columns;
 }
+export default AccomodationColumns;

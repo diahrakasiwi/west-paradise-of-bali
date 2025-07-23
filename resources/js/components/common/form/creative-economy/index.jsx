@@ -119,7 +119,7 @@ export default function FormCreativeEconomy({
                                     {
                                         required: true,
                                         message:
-                                            "Masukkan nama ekonomi kreatif",
+                                            "Nama Ekonomi Kreatif wajib diisi",
                                     },
                                 ]}
                             >
@@ -133,7 +133,7 @@ export default function FormCreativeEconomy({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan Kecamatan",
+                                        message: "Kecamatan wajib diisi",
                                     },
                                 ]}
                             >
@@ -147,7 +147,7 @@ export default function FormCreativeEconomy({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan Desa/Kelurahan",
+                                        message: "Desa/Kelurahan wajib diisi",
                                     },
                                 ]}
                             >
@@ -164,7 +164,7 @@ export default function FormCreativeEconomy({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Pilih jenis kategori",
+                                        message: "Jenis Kategori wajib diisi",
                                     },
                                 ]}
                             >
@@ -185,7 +185,7 @@ export default function FormCreativeEconomy({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Pilih kategori",
+                                        message: "Pilih Kategori",
                                     },
                                 ]}
                             >
@@ -208,7 +208,7 @@ export default function FormCreativeEconomy({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan alamat",
+                                        message: "Alamat wajib diisi",
                                     },
                                 ]}
                             >
@@ -257,7 +257,7 @@ export default function FormCreativeEconomy({
                         label="Deskripsi"
                         name="description"
                         rules={[
-                            { required: true, message: "Masukkan deskripsi" },
+                            { required: true, message: "Deskripsi wajib diisi" },
                         ]}
                     >
                         <ReactQuill
@@ -275,6 +275,21 @@ export default function FormCreativeEconomy({
                             { required: true, message: "Upload thumbnail" },
                         ]}
                     >
+                    {/* Informasi Petunjuk */}
+                    <div
+                        style={{
+                            backgroundColor: "#FFFDF0",
+                            padding: 10,
+                            borderLeft: "6px solid orange",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                            marginBottom: 24,
+                            fontWeight: 320,
+                        }}
+                    >
+                        <Text>
+                            <b>Petunjuk Thumbnail:</b> Disarankan rasio gambar: 4:3 (landscape) | Maksimal ukuran file: 2 MB | Format jpg, jpeg, png, atau webp.
+                        </Text>
+                    </div>
                         <>
                             {process === "update" && thumbnailPreview ? (
                                 <div style={{ marginBottom: 10 }}>
@@ -355,6 +370,22 @@ export default function FormCreativeEconomy({
                         name="photos"
                         rules={[{ required: true, message: "Upload foto" }]}
                     >
+
+                    {/* Informasi Petunjuk */}
+                    <div
+                        style={{
+                            backgroundColor: "#FFFDF0",
+                            padding: 10,
+                            borderLeft: "6px solid orange",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                            marginBottom: 24,
+                            fontWeight: 320,
+                        }}
+                    >
+                        <Text>
+                            <b>Petunjuk Foto:</b> Unggah minimal 1 foto | Maksimal ukuran file: 2 MB | Format jpg, jpeg, png, atau webp.
+                        </Text>
+                    </div>
                         <>
                             {process === "update" &&
                             photosPreview.length > 0 ? (
@@ -467,7 +498,7 @@ export default function FormCreativeEconomy({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan kontak",
+                                        message: "Kontak wajib diisi",
                                     },
                                 ]}
                             >
@@ -481,7 +512,7 @@ export default function FormCreativeEconomy({
                                 rules={[
                                     {
                                         required: true,
-                                        message: "Masukkan kewenangan",
+                                        message: "Kewenangan wajib diisi",
                                     },
                                 ]}
                             >
@@ -539,23 +570,38 @@ export default function FormCreativeEconomy({
                         label="Fasilitas"
                         name="facilities"
                         rules={[
-                            { required: true, message: "Masukkan fasilitas" },
+                            { required: true, message: "Fasilitas wajib diisi" },
                         ]}
                     >
+                    {/* Informasi Petunjuk */}
+                    <div
+                        style={{
+                            backgroundColor: "#FFFDF0",
+                            padding: 10,
+                            borderLeft: "6px solid orange",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                            marginBottom: 24,
+                            fontWeight: 320,
+                        }}
+                    >
+                        <Text>
+                            <b>Petunjuk Fasilitas:</b> Harap pisahkan dengan tanda koma (,).
+                        </Text>
+                    </div>
                         <Input placeholder="Masukkan Fasilitas..." />
                     </Form.Item>
 
                     <Form.Item
-                        label="Google Business"
+                        label="Google Business / Website"
                         name="google_business"
                         rules={[
                             {
                                 required: true,
-                                message: "Masukkan URL Google Business",
+                                message: "Wajib diisi",
                             },
                         ]}
                     >
-                        <Input placeholder="Masukkan Google Business..." />
+                        <Input placeholder="Masukkan URL Google Business atau Website..." />
                     </Form.Item>
 
                     <Form.Item name="is_published" valuePropName="checked">

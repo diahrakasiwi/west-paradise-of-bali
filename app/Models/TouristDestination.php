@@ -32,6 +32,7 @@ class TouristDestination extends Model
         'end_time',
         'is_fullday',
         'category_id',
+        'sector_id',
     ];
 
     protected $keyType = 'string';

@@ -46,7 +46,7 @@ export default function DetailNewsContent() {
                             fontWeight: 500,
                         }}
                     >
-                        Kembali ke Daftar Berita
+                        Kembali ke Pilihan Berita
                     </span>
                 </Flex>
 

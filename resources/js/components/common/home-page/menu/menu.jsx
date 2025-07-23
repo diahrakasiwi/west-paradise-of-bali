@@ -1,5 +1,6 @@
 import { Link } from "@inertiajs/inertia-react";
-import translations from "../../lang/lang";
+import translations from "../../../../lang/lang";
+import { HomePageMenu } from "@/data/home-page/menu";
 
 export const NavbarMenu = (locale = "id") => {
     const t = translations[locale] || {};

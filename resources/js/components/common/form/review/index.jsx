@@ -11,7 +11,7 @@ export default function FormReview({ onSubmit, type, reviewableId }) {
     const onFinish = async (values) => {
         const payload = {
             ...values,
-            rating,
+            rating: values.rating, //ditambah
             review_type: type, // optional, but if still used, keep it
             reviewable_id: reviewableId,
             reviewable_type: getReviewableType(type),
@@ -50,14 +50,6 @@ export default function FormReview({ onSubmit, type, reviewableId }) {
                 Berikan Peringkat dan Ulasan
             </Title>
 
-            <div style={{ marginBottom: 16 }}>
-                <Rate
-                    value={rating}
-                    onChange={setRating}
-                    style={{ color: "#E4A70A", fontSize: 28 }}
-                />
-            </div>
-
             <Form
                 form={form}
                 layout="vertical"
@@ -65,7 +57,23 @@ export default function FormReview({ onSubmit, type, reviewableId }) {
                 requiredMark={false}
             >
                 <Form.Item
-                    label="Nama"
+                    label={
+                        <span>
+                            Peringkat<span style={{ color: "red", marginLeft: 4 }}>*</span>
+                        </span>
+                    }
+                    name="rating"
+                    rules={[{ required: true, message: "Peringkat wajib diisi" }]}
+                >
+                    <Rate style={{ color: "#E4A70A", fontSize: 28 }} />
+                </Form.Item>
+
+                <Form.Item
+                    label={
+                        <span>
+                            Nama<span style={{ color: "red", marginLeft: 4 }}>*</span>
+                        </span>
+                    }
                     name="name"
                     rules={[{ required: true, message: "Nama wajib diisi" }]}
                 >
@@ -73,7 +81,11 @@ export default function FormReview({ onSubmit, type, reviewableId }) {
                 </Form.Item>
 
                 <Form.Item
-                    label="Email"
+                    label={
+                        <span>
+                            Email<span style={{ color: "red", marginLeft: 4 }}>*</span>
+                        </span>
+                    }
                     name="email"
                     rules={[
                         { required: true, message: "Email wajib diisi" },
@@ -84,7 +96,11 @@ export default function FormReview({ onSubmit, type, reviewableId }) {
                 </Form.Item>
 
                 <Form.Item
-                    label="Ulasan"
+                    label={
+                        <span>
+                            Ulasan<span style={{ color: "red", marginLeft: 4 }}>*</span>
+                        </span>
+                    }
                     name="review"
                     rules={[{ required: true, message: "Ulasan wajib diisi" }]}
                 >
