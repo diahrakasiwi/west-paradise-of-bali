@@ -45,19 +45,49 @@ class HomeController extends Controller
             ]);
         }
         $sliders = Slider::where('is_published', 1)->get();
-        $touristDestinations = TouristDestination::where('is_published', 1)
-            ->with('category')
-            ->orderBy('created_at', 'desc')
+        // Tourist Destinations
+        $touristDestinations = TouristDestination::with(['category', 'reviews'])
+            ->withCount(['views', 'reviews'])
+            ->where('is_published', 1)
+            ->latest()
             ->take(4)
-            ->get();
-        $restaurants = Restaurant::where('is_published', 1)
-            ->orderBy('created_at', 'desc')
+            ->get()
+            ->map(function ($item) {
+                $item->average_rating = round($item->reviews->avg('rating') ?? 0, 1);
+                $item->total_views = $item->views_count ?? 0;
+                $item->total_reviews = $item->reviews_count ?? 0;
+                return $item;
+            });
+
+        // Restaurants
+        $restaurants = Restaurant::with(['reviews'])
+            ->withCount(['views', 'reviews'])
+            ->where('is_published', 1)
+            ->latest()
             ->take(4)
-            ->get();
-        $accomodations = Accomodation::where('is_published', 1)
-            ->orderBy('created_at', 'desc')
+            ->get()
+            ->map(function ($item) {
+                $item->average_rating = round($item->reviews->avg('rating') ?? 0, 1);
+                $item->total_views = $item->views_count ?? 0;
+                $item->total_reviews = $item->reviews_count ?? 0;
+                return $item;
+            });
+
+        // Accommodations
+        $accommodations = Accomodation::with(['reviews'])
+            ->withCount(['views', 'reviews'])
+            ->where('is_published', 1)
+            ->latest()
             ->take(4)
-            ->get();
+            ->get()
+            ->map(function ($item) {
+                $item->average_rating = round($item->reviews->avg('rating') ?? 0, 1);
+                $item->total_views = $item->views_count ?? 0;
+                $item->total_reviews = $item->reviews_count ?? 0;
+                return $item;
+            });
+
+
         $events = Event::where('is_published', 1)
             ->with('category')
             ->orderBy('created_at', 'desc')
@@ -71,7 +101,7 @@ class HomeController extends Controller
             'sliders' => $sliders,
             'touristDestinations' => $touristDestinations,
             'restaurants' => $restaurants,
-            'accomodations' => $accomodations,
+            'accomodations' => $accommodations,
             'events' => $events,
             'news' => $news,
         ]);
