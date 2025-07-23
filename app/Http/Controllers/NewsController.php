@@ -20,9 +20,8 @@ class NewsController extends Controller
     public function index()
     {
         $news = News::all()->map(function ($item) {
-            $item->thumbnail = $item->thumbnail 
-                ? asset('storage/' . $item->thumbnail) 
-                : null;
+            // Jika thumbnail sudah URL Supabase, langsung gunakan apa adanya
+            $item->thumbnail = $item->thumbnail;
             return $item;
         });
         return Inertia::render('dashboard/news/Page', [
