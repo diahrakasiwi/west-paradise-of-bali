@@ -45,7 +45,6 @@ export default function SearchLocationContent() {
             });
 
             const result = await response.json();
-            console.log("Search API result:", result);
 
             if (Array.isArray(result.data)) {
                 setSearchResults(result.data);
@@ -112,12 +111,12 @@ export default function SearchLocationContent() {
                     searchResults.length > 0 ? (
                         <Row gutter={[16, 24]} justify="center">
                             {searchResults.map((item) => (
-                                <Col 
-                                key={item.id} 
-                                xs={24} 
-                                sm={12} 
-                                md={8} 
-                                lg={6} 
+                                <Col
+                                key={item.id}
+                                xs={24}
+                                sm={12}
+                                md={8}
+                                lg={6}
                                 style={{
                                     display: "flex",
                                     justifyContent: "center",
@@ -153,11 +152,11 @@ export default function SearchLocationContent() {
                     <Row gutter={[16, 24]} justify="center">
                         {data.map((item) => (
                             <Col
-                            key={item.id} 
-                            xs={24} 
-                            sm={12} 
-                            md={8} 
-                            lg={6} 
+                            key={item.id}
+                            xs={24}
+                            sm={12}
+                            md={8}
+                            lg={6}
                             style={{
                                 display: "flex",
                                 justifyContent: "center",

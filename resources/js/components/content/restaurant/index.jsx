@@ -5,7 +5,7 @@ import AddButton from "../../common/add-button";
 import SearchBar from "../../common/search";
 import RestaurantColumns from "./colums";
 import { Inertia } from "@inertiajs/inertia";
-import { useEffect, useState } from "react"; 
+import { useEffect, useState } from "react";
 
 export default function RestaurantContent() {
     const { restaurants } = usePage().props;
@@ -38,7 +38,6 @@ export default function RestaurantContent() {
             });
         },
         onImageDetail: (record) => {
-        console.log("PREVIEW RECORD:", JSON.stringify(record, null, 2));
             setPreviewData(record);
             setPreviewVisible(true);
         },
@@ -101,7 +100,7 @@ export default function RestaurantContent() {
                     pagination={{ position: ["bottomRight"] }}
                 />
             </Card>
-            
+
             {/* MODAL DETAIL GAMBAR */}
             {previewData && (
             <Modal

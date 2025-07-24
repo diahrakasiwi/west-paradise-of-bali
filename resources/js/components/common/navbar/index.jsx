@@ -8,11 +8,9 @@ import { Link } from "@inertiajs/inertia-react";
 
 export default function NavBar() {
     const { url, locale } = usePage().props;
-    console.log("CURRENT LOCALE:", locale); //tambah
     const [selectedKey, setSelectedKey] = useState("/");
     const screens = Grid.useBreakpoint();
     const [mobileOpen, setMobileOpen] = useState(false);
-    console.log("MENU DATA", NavbarMenu(locale)); //tambah
 
     useEffect(() => {
         if (url) {

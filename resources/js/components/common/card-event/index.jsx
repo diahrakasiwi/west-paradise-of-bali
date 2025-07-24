@@ -24,21 +24,8 @@ export default function CardEvent({
     id,
     is_uncertain,
     locale,
-    category
-    }) {
-    console.log("CardEvent props:", {
-        name,
-        description,
-        address,
-        start_date,
-        end_date,
-        thumbnail,
-        type_category,
-        id,
-        is_uncertain,
-        locale,
-        category
-    });
+    category,
+}) {
     const screens = useBreakpoint();
     const [showFullDesc, setShowFullDesc] = useState(false);
     const parsedDesc = parse(description);
@@ -50,7 +37,7 @@ export default function CardEvent({
             : `${dayjs(start_date).format("DD")} – ${dayjs(end_date).format(
                   "DD MMMM YYYY"
               )}`;
-        return (
+    return (
         <Card
             style={{
                 width: 800,
@@ -113,7 +100,7 @@ export default function CardEvent({
                             marginLeft: 45,
                         }}
                     >
-                    Kategori {category?.name_category || "Tidak diketahui"}
+                        Kategori {category?.name_category || "Tidak diketahui"}
                     </Tag>
                 </div>
 
@@ -169,9 +156,7 @@ export default function CardEvent({
                                     userSelect: "none",
                                 }}
                             >
-                                {showFullDesc
-                                    ? t.event.less
-                                    : t.event.more}
+                                {showFullDesc ? t.event.less : t.event.more}
                             </Text>
                         )}
                     </div>
@@ -206,9 +191,7 @@ export default function CardEvent({
                         >
                             <CalendarOutlined style={{ color: "#4caf50" }} />
                             {is_uncertain ? (
-                                <Text type="warning">
-                                    {t.event.uncertain}
-                                </Text>
+                                <Text type="warning">{t.event.uncertain}</Text>
                             ) : (
                                 <Text>{formattedDate}</Text>
                             )}

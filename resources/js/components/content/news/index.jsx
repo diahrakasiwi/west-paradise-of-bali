@@ -31,7 +31,6 @@ export default function NewsContent() {
             });
         },
         onImageDetail: (record) => {
-        console.log("PREVIEW RECORD:", JSON.stringify(record, null, 2));
             setPreviewData(record);
             setPreviewVisible(true);
         },
@@ -63,7 +62,7 @@ export default function NewsContent() {
                     pagination={{ position: ["bottomRight"] }}
                 />
             </Card>
-            
+
             {/* MODAL DETAIL GAMBAR */}
             {previewData && (
             <Modal

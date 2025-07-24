@@ -26,8 +26,6 @@ export default function HomeDashboardContent() {
         searchLogDestinatioPerType,
     } = usePage().props;
 
-    console.log("searchLogDestinationPerType", searchLogDestinatioPerType);
-
     const [year, setYear] = useState(defaultYear);
     const [month, setMonth] = useState(defaultMonth);
 

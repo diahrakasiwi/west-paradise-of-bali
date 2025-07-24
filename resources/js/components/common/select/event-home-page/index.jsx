@@ -4,9 +4,9 @@ import translations from "../../../../lang/lang";
 const { Title } = Typography;
 
 export default function EventSelect({ events = [], locale }) {
-    const categories = [...new Set(events.map((e) => e.category.name_category))];
-
-    console.log(events);
+    const categories = [
+        ...new Set(events.map((e) => e.category.name_category)),
+    ];
 
     const t = translations[locale || "id"];
 

@@ -6,7 +6,6 @@ import Layout from "../../Layout";
 
 export default function EditHealthFacility() {
     const { healthFacility } = usePage().props;
-    console.log(healthFacility);
     const handleSubmit = (values) => {
         Inertia.put(
             `/dashboard/health-facilities/${healthFacility.id}`,

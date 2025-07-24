@@ -6,7 +6,6 @@ import translations from "../../../lang/lang";
 const { Paragraph } = Typography;
 
 export default function ReviewSection({ id, model, reviews, access, locale }) {
-    console.log(reviews);
 
     const ratingStats = [5, 4, 3, 2, 1].map((star) => {
         const total = reviews.length;
@@ -27,11 +26,11 @@ export default function ReviewSection({ id, model, reviews, access, locale }) {
     const t = translations[locale || "id"];
 
     return (
-        <div style={{ 
+        <div style={{
                 padding: 24,
-                borderRadius: 10, 
-                background: "#ffff", 
-                border: "1px solid #f0f0f0", 
+                borderRadius: 10,
+                background: "#ffff",
+                border: "1px solid #f0f0f0",
                 boxShadow: "0 2px 8px rgba(0, 0, 0, 0.02)"
             }}
         >

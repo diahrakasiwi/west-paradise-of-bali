@@ -6,7 +6,6 @@ import { usePage } from "@inertiajs/inertia-react";
 
 export default function EditUser() {
     const { user } = usePage().props;
-    console.log(user);
     const handleSubmit = (values) => {
         Inertia.put(`/dashboard/accounts/${user.id}`, values, {
             onSuccess: () => {

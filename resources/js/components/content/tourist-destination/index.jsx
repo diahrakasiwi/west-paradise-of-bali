@@ -6,7 +6,7 @@ import { usePage } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 import SearchBar from "../../common/search";
 import { useEffect, useState } from "react";
- 
+
 export default function TouristDestinationContent() {
     const { touristDestinations } = usePage().props;
 
@@ -37,7 +37,6 @@ export default function TouristDestinationContent() {
             });
         },
         onImageDetail: (record) => {
-        console.log("PREVIEW RECORD:", JSON.stringify(record, null, 2));
             setPreviewData(record);
             setPreviewVisible(true);
         },

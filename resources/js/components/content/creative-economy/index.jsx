@@ -38,7 +38,6 @@ export default function CreativeEconomyContent() {
             });
         },
         onImageDetail: (record) => {
-        console.log("PREVIEW RECORD:", JSON.stringify(record, null, 2));
             setPreviewData(record);
             setPreviewVisible(true);
         },

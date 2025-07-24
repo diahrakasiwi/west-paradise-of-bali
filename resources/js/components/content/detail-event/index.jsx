@@ -32,17 +32,13 @@ export default function DetailEventContent() {
 
     const t = translations[locale || "id"];
 
-    const screens = useBreakpoint()
+    const screens = useBreakpoint();
 
     const position = [parseFloat(data.latitude), parseFloat(data.longitude)];
 
     const time = `${dayjs(data.start_time, "HH:mm:ss").format(
         "HH:mm"
     )} – ${dayjs(data.end_time, "HH:mm:ss").format("HH:mm")}`;
-
-    console.log("Data Category Object:", data.category);
-    console.log("Nama Category:", data.category?.name_category);
-
 
     return (
         <div style={{ fontFamily: "Poppins, sans-serif" }}>

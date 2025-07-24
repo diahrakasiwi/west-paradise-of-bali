@@ -38,7 +38,6 @@ export default function AccomodationContent() {
             });
         },
         onImageDetail: (record) => {
-        console.log("PREVIEW RECORD:", JSON.stringify(record, null, 2));
             setPreviewData(record);
             setPreviewVisible(true);
         },
@@ -101,44 +100,59 @@ export default function AccomodationContent() {
                     pagination={{ position: ["bottomRight"] }}
                 />
             </Card>
-            
+
             {/* MODAL DETAIL GAMBAR */}
             {previewData && (
-            <Modal
-                visible={!!previewData}
-                onCancel={() => setPreviewData(null)}
-                footer={null}
-            >
-                <h2>Detail Gambar</h2>
+                <Modal
+                    visible={!!previewData}
+                    onCancel={() => setPreviewData(null)}
+                    footer={null}
+                >
+                    <h2>Detail Gambar</h2>
 
-                <p><strong>Thumbnail:</strong></p>
-                <img
-                src={previewData.thumbnail}
-                alt="Thumbnail"
-                style={{ width: "100%", maxHeight: 300, objectFit: "cover", borderRadius: 8 }}
-                />
-
-                {/* Tambahkan ini untuk menampilkan galeri */}
-                {previewData.images && previewData.images.length > 0 && (
-                <>
-                    <p style={{ marginTop: 16 }}><strong>Foto:</strong></p>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                    {previewData.images.map((img, index) => (
-                        <img
-                        key={index}
-                        src={img.image_url}
-                        alt={`Gallery ${index + 1}`}
+                    <p>
+                        <strong>Thumbnail:</strong>
+                    </p>
+                    <img
+                        src={previewData.thumbnail}
+                        alt="Thumbnail"
                         style={{
-                            width: "48%",
-                            borderRadius: 8,
+                            width: "100%",
+                            maxHeight: 300,
                             objectFit: "cover",
+                            borderRadius: 8,
                         }}
-                        />
-                    ))}
-                    </div>
-                </>
-                )}
-            </Modal>
+                    />
+
+                    {/* Tambahkan ini untuk menampilkan galeri */}
+                    {previewData.images && previewData.images.length > 0 && (
+                        <>
+                            <p style={{ marginTop: 16 }}>
+                                <strong>Foto:</strong>
+                            </p>
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexWrap: "wrap",
+                                    gap: 8,
+                                }}
+                            >
+                                {previewData.images.map((img, index) => (
+                                    <img
+                                        key={index}
+                                        src={img.image_url}
+                                        alt={`Gallery ${index + 1}`}
+                                        style={{
+                                            width: "48%",
+                                            borderRadius: 8,
+                                            objectFit: "cover",
+                                        }}
+                                    />
+                                ))}
+                            </div>
+                        </>
+                    )}
+                </Modal>
             )}
         </div>
     );
